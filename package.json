@@ -1,0 +1,23 @@
+{
+  "name": "h5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cleocn/h5.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cleocn/h5/issues"
+  },
+  "homepage": "https://github.com/cleocn/h5#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-upload-qcloud": "^1.1.0"
+  }
+}
