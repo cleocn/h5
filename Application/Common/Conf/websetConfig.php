@@ -1,9 +1,9 @@
 <?php 
 return array (
   'site_name' => '场景秀',
-  'site_url' => '//h5.ideavip.cn',
-  'site_url_cdn_static' => '//h5cdn.h5.ideavip.cn',
-  'site_url_cdn_uploads' => '//cdn.h5.ideavip.cn',
+  'site_url' => 'https://h5.ideavip.cn',
+  'site_url_cdn_static' => 'https://h5cdn.h5.ideavip.cn',
+  'site_url_cdn_uploads' => 'https://cdn.h5.ideavip.cn',
   'site_title' => 'H5内容引擎 企业版 独立部署版 ',
   'keyword' => 'H5内容引擎,企业版,独立部署版',
   'content' => '易企秀移动场景,免费为中小微企业或团队提供业务场景应用展示、潜在客户在线报名收集、管理和二次营销',
