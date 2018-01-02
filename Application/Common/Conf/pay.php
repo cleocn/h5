@@ -5,6 +5,6 @@ return array (
   'ali_partner' => '2088102475414576',
   'ali_key' => '8alga5n5i8kh2ipuibfysk46e1takfqt',
   'ali_service' => 'create_partner_trade_by_buyer',
-  'pay_taobaourl' => 'http://cgtblog.taobao.com',
+  'pay_taobaourl' => '//cgtblog.taobao.com',
   'pay_qq' => '2931393342',
 );

@@ -2,9 +2,9 @@
 // +----------------------------------------------------------------------
 // | OneThink [ WE CAN DO IT JUST THINK IT ]
 // +----------------------------------------------------------------------
-// | Copyright (c) 2013 http://www.onethink.cn All rights reserved.
+// | Copyright (c) 2013 //www.onethink.cn All rights reserved.
 // +----------------------------------------------------------------------
-// | Author: 麦当苗儿 <zuojiazi@vip.qq.com> <http://www.zjzit.cn>
+// | Author: 麦当苗儿 <zuojiazi@vip.qq.com> <//www.zjzit.cn>
 // +----------------------------------------------------------------------
 namespace Adminc\Controller;
 use Think\Controller;

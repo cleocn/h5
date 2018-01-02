@@ -65,7 +65,7 @@
 										<!-- Nested media object -->
 
 										<div class="media">
-<a href="/adminc.php?c=user&a=e&id={$user.userid_int}"class="pull-left"><img src="<if condition="substr($user['headimg'],0,7) neq 'http://'">/Uploads/</if>{$user.headimg|default="defaultuser.jpg"}" width="60" height="60" class="media-object" style=" width:60px; height:60px"/> </a>
+<a href="/adminc.php?c=user&a=e&id={$user.userid_int}"class="pull-left"><img src="<if condition="substr($user['headimg'],0,7) neq '//'">/Uploads/</if>{$user.headimg|default="defaultuser.jpg"}" width="60" height="60" class="media-object" style=" width:60px; height:60px"/> </a>
 
 
 											<div class="media-body">

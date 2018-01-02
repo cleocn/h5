@@ -45,8 +45,8 @@ class SysfileController extends Controller {
 			
 			$jsonresult = json_decode($jsonstr,true);
 			foreach($jsonresult['list'] as $v){
-				$data = file_get_contents('http://eqx.aeys.net/'.$v['path']);
-				$datathumb = file_get_contents('http://eqx.aeys.net/'.$v['tmbPath']);
+				$data = file_get_contents('//eqx.aeys.net/'.$v['path']);
+				$datathumb = file_get_contents('//eqx.aeys.net/'.$v['tmbPath']);
 				$filetime = time();
 				$filename1 = md5($v['path']);
 				$filename1thumb = $filename1.'_thumb';
@@ -90,7 +90,7 @@ class SysfileController extends Controller {
 			
 			$jsonresult = json_decode($jsonstr,true);
 			foreach($jsonresult['list'] as $v){
-				$data = file_get_contents('http://eqx.aeys.net/'.$v['path']);
+				$data = file_get_contents('//eqx.aeys.net/'.$v['path']);
 				$filetime = time();
 				$filename1 = md5($v['path']);
 				$filename = $filename1.'.'.substr($v['path'],-3,3); //生成文件名，
@@ -147,7 +147,7 @@ class SysfileController extends Controller {
 			
 			$jsonresult = json_decode($jsonstr,true);
 			foreach($jsonresult['list'] as $v){
-				$data = file_get_contents('http://eqx.aeys.net/'.$v['properties']['thumbSrc']);
+				$data = file_get_contents('//eqx.aeys.net/'.$v['properties']['thumbSrc']);
 				$filetime = time();
 				$filename1 = md5($v['properties']['thumbSrc']);
 				$filename = $filename1.'.'.substr($v['properties']['thumbSrc'],-3,3); //生成文件名，
@@ -181,7 +181,7 @@ class SysfileController extends Controller {
 			
 			$jsonresult = json_decode($jsonstr,true);
 			foreach($jsonresult['list'] as $v){
-				$data = file_get_contents('http://eqx.aeys.net/'.$v['image']['imgSrc']);
+				$data = file_get_contents('//eqx.aeys.net/'.$v['image']['imgSrc']);
 				$filetime = time();
 				$filename1 = md5($v['image']['imgSrc']);
 				$filename = $filename1.'.'.substr($v['image']['imgSrc'],-3,3); //生成文件名，
@@ -191,7 +191,7 @@ class SysfileController extends Controller {
 
 				if($v['image']['bgAudio']['url']!="")
 				{
-					$data = file_get_contents('http://eqx.aeys.net/'.$v['image']['bgAudio']['url']);
+					$data = file_get_contents('//eqx.aeys.net/'.$v['image']['bgAudio']['url']);
 					$filetime = time();
 					$filename1 = md5($v['image']['bgAudio']['url']);
 					$filenameaudio = $filename1.'.'.substr($v['image']['bgAudio']['url'],-3,3); //生成文件名，
@@ -251,8 +251,8 @@ class SysfileController extends Controller {
 			$where['userid_int'] = 0;
 			$m_scenelist=$m_scene->where($where)->select();
 			foreach($m_scenelist as $voo){
-				echo "http://127.0.0.1/eqxiu/jsonsys/".$voo['eqcode'];
-				$jsonstr = json_decode(file_get_contents("http://127.0.0.1/eqxiu/jsonsys/".$voo['eqcode']),true);
+				echo "//127.0.0.1/eqxiu/jsonsys/".$voo['eqcode'];
+				$jsonstr = json_decode(file_get_contents("//127.0.0.1/eqxiu/jsonsys/".$voo['eqcode']),true);
 				//var_dump($jsonstr);
 				$jsonstr = $jsonstr['list'];
 
@@ -275,9 +275,9 @@ class SysfileController extends Controller {
 	// 增加系统模板内页数据
 	public function addnotfound(){
 			$m_scenepage=M('scenepage');
-			echo "http://127.0.0.1/404.php";
+			echo "//127.0.0.1/404.php";
 			//var_dump($m_scenepage);exit;
-			$jsonstr = json_decode(file_get_contents("http://127.0.0.1/404.htm"),true);
+			$jsonstr = json_decode(file_get_contents("//127.0.0.1/404.htm"),true);
 			$jsonstr = $jsonstr['list'];
 			//var_dump($jsonstr);exit;
 				//$enjsonstr = $this->arr_foreachme($jsonstr,267070);
@@ -319,7 +319,7 @@ class SysfileController extends Controller {
 		$m_scene=M('scene');
 		$m_scenelist=$m_scene->where('userid_int=0')->select();
 		foreach($m_scenelist as $v){
-			echo "http://eqx.aeys.net/eqs/s/".$v['eqcode']."\n";
+			echo "//eqx.aeys.net/eqs/s/".$v['eqcode']."\n";
 		}
 	}
 
@@ -344,7 +344,7 @@ class SysfileController extends Controller {
 		$m_scene=M('scenepagesys');
 		$m_scenelist=$m_scene->distinct(true)->field('eqid_int')->select();
 		foreach($m_scenelist as $v){
-			$jsonstr = json_decode(file_get_contents("http://127.0.0.1/eqxiu/Uploads/json/".$v['eqid_int']),true);
+			$jsonstr = json_decode(file_get_contents("//127.0.0.1/eqxiu/Uploads/json/".$v['eqid_int']),true);
 			$jsonstr = $jsonstr['obj']['elements'];
 			$enjsonstr = $this->arr_foreach($jsonstr,$v['eqid_int']);
 			$where['eqid_int']  = $v['eqid_int'];
@@ -372,7 +372,7 @@ class SysfileController extends Controller {
 					//var_dump( $filename11).'---';
 					$this->updatesyspagebymeid($id,$filename11,'syspic/pageimg/'.$filename1.'.'.substr($val,-3,3));
 					//echo $filename11.'---';
-					$data = file_get_contents('http://res.eqxiu.com/'.$val);
+					$data = file_get_contents('//res.eqxiu.com/'.$val);
 					$filetime = time();
 					$filename = $filename1.'.'.substr($val,-3,3); //生成文件名，
 					$fp = @fopen('./Uploads/syspic/pageimg/'.$filename,"w"); //以写方式打开文件
@@ -402,7 +402,7 @@ class SysfileController extends Controller {
 					//var_dump( $filename11).'---';
 					$this->updatesyspagebyid($id,$filename11,'syspic/pageimg/'.$filename1.'.'.substr($val,-3,3));
 					//echo $filename11.'---';
-					$data = file_get_contents('http://res.eqxiu.com/'.$val);
+					$data = file_get_contents('//res.eqxiu.com/'.$val);
 					$filetime = time();
 					$filename = $filename1.'.'.substr($val,-3,3); //生成文件名，
 					$fp = @fopen('./Uploads/syspic/pageimg/'.$filename,"w"); //以写方式打开文件
@@ -453,7 +453,7 @@ class SysfileController extends Controller {
 					//var_dump( $filename11).'---';
 					$this->updatextpagebyid($id,$filename11,'syspic/pageimg/'.$filename1.'.'.substr($val,-3,3));
 					//echo $filename11.'---';
-					$data = file_get_contents('http://res.eqxiu.com/'.$val);
+					$data = file_get_contents('//res.eqxiu.com/'.$val);
 					$filetime = time();
 					$filename = $filename1.'.'.substr($val,-3,3); //生成文件名，
 					$fp = @fopen('./Uploads/syspic/pageimg/'.$filename,"w"); //以写方式打开文件

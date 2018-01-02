@@ -105,7 +105,7 @@ class SysController extends BaseController {
 		unset($_POST['files']);
 		unset($_POST[C('TOKEN_NAME')]);
 			//print_r($_POST); exit;
-			$_POST['THINK_SDK_QQ']['CALLBACK']='http://' . $_SERVER['HTTP_HOST'].'/password.html';
+			$_POST['THINK_SDK_QQ']['CALLBACK']='//' . $_SERVER['HTTP_HOST'].'/password.html';
 		 if($this->update_config($_POST,CONF_PATH.'otherlogin.php')){
 			$this->success('操作成功');
 		}else{

@@ -33,7 +33,7 @@ class CjqtController extends Controller {
         $img = './Uploads/syspic/scene/';
         $img2 = './Uploads/';
         $mp3 = './Uploads/syspic/mp3/';
-		$url22 = 'http://'.$com.$cs;
+		$url22 = '//'.$com.$cs;
 
 		$data22  = $this->GetCurl($url22);
 		$da =$this -> GetCurl($url);
@@ -42,7 +42,7 @@ class CjqtController extends Controller {
 		$da =$da.'}';
 		$resp =$this->ext_json_decode($da, true);
 		//var_dump($resp);die;
-		$url = 'http://'.$com .'/index.php?c=scene&a=view&id=' . $resp['id'].'&ad=1&time=1449479812051'; 
+		$url = '//'.$com .'/index.php?c=scene&a=view&id=' . $resp['id'].'&ad=1&time=1449479812051'; 
         $da = $this->GetCurl($url);		
 		$resp = json_decode($da, true);
 		
@@ -83,10 +83,10 @@ class CjqtController extends Controller {
 			}
 			foreach ($filepath as $key => $var) {
 				$da = str_replace($var, $src2.$this->get_filename($var), $da);
-				if(preg_match('|^http://|', $var)){
+				if(preg_match('|^//|', $var)){
 					$this->save_pic($var, $img);
 				}else{
-					$this->save_pic('http://'.$com.'/Uploads/' . $var, $img);
+					$this->save_pic('//'.$com.'/Uploads/' . $var, $img);
 				}  
 			}
 			$da = preg_replace("/(syspic\/scene\/){2,}/",$src2,$da);
@@ -104,16 +104,16 @@ class CjqtController extends Controller {
 			$data['userid_int'] =0;
 
 			if (!empty($arr22['bgAudio']['url'])) {
-				if (preg_match('|^http://|', $arr22['bgAudio']['url'])) {
+				if (preg_match('|^//|', $arr22['bgAudio']['url'])) {
 					$mp = $arr22['bgAudio']['url'];
 				} elseif (isset($arr22['bgAudio']['url'])) {
-					$mp = 'http://'.$com.'/Uploads/' . $arr22['bgAudio']['url'];
+					$mp = '//'.$com.'/Uploads/' . $arr22['bgAudio']['url'];
 				}
 				$data['musicurl_varchar'] = 'syspic/mp3/' . $this->save_pic($mp, $mp3);
 			 } else {
 			}
 			
-            $pic1 = 'http://'.$com.'/Uploads/' . $arr22['cover'];
+            $pic1 = '//'.$com.'/Uploads/' . $arr22['cover'];
             $data['thumbnail_varchar'] = 'syspic/scene/' . $this->save_pic($pic1, $img);
             
 			$data['is_tpl'] = 1;
@@ -151,7 +151,7 @@ class CjqtController extends Controller {
 				
                 echo json_encode(array(
                     "msg" => "成功采集",
-                    "url" => 'http://' . $_SERVER['HTTP_HOST'] . '/v/' . $data['scenecode_varchar']
+                    "url" => '//' . $_SERVER['HTTP_HOST'] . '/v/' . $data['scenecode_varchar']
                 ));
             } else {
 			die(var_dump("数据写入错误"));
@@ -182,7 +182,7 @@ class CjqtController extends Controller {
             if (!empty($code[0][scenecode_varchar])) {
                 echo json_encode(array(
                     "msg" => "已经存在",
-                    "url" => 'http://' . $_SERVER['HTTP_HOST'] . '/v/' . $code[0][scenecode_varchar]
+                    "url" => '//' . $_SERVER['HTTP_HOST'] . '/v/' . $code[0][scenecode_varchar]
                 ));
             } else {
                 echo json_encode(array(
@@ -274,8 +274,8 @@ class CjqtController extends Controller {
     }
 	public function get_filetpye($url)
 	{//pppon.com
-		if(!preg_match('|^http://|', $url)){
-			$url = 'http://res.eqh5.com/' . $url;
+		if(!preg_match('|^//|', $url)){
+			$url = '//res.eqh5.com/' . $url;
 		}  
 		// mime 和 扩展名 的映射
 		$mimes=array(

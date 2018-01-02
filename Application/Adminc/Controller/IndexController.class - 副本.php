@@ -35,7 +35,7 @@ class IndexController extends BaseController {
         $ver = $ver['ver'];
 		$release = include($version);
         $release = $release['release'];
-        $hosturl = urlencode('http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']);
+        $hosturl = urlencode('//' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']);
         $updatehost = '#';
         $updatehosturl = $updatehost . '?a=client_check_time&v=' . $ver . '&u=' . $hosturl;
         $domain_time = file_get_contents($updatehosturl);
@@ -66,7 +66,7 @@ class IndexController extends BaseController {
     			'PHP运行方式：' => php_sapi_name(),
 				'PHP版本：' => PHP_VERSION,
     			'MYSQL版本：' =>$mysql,
-    			'程序系统版本' =>  "春哥网络易企秀整合70度_V $ver $release &nbsp;&nbsp;&nbsp; [<a href='http://bbs.cgtblog.com' target='_blank'>访问春哥网络科技论坛</a>]",
+    			'程序系统版本' =>  "春哥网络易企秀整合70度_V $ver $release &nbsp;&nbsp;&nbsp; [<a href='//bbs.cgtblog.com' target='_blank'>访问春哥网络科技论坛</a>]",
     			'上传附件限制：' => ini_get('upload_max_filesize'),
     			'执行时间限制：' => ini_get('max_execution_time') . "秒",
     			'剩余空间：' => round((@disk_free_space(".") / (1024 * 1024)), 2) . 'M',

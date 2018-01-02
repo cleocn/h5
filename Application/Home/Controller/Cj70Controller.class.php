@@ -27,7 +27,7 @@ class Cj70Controller extends Controller {
 		//die(var_dump($cs)); 
         $where['eqcode'] = $cs;
         $code = $user->where($where)->select();
-		$url = 'http://www.70c.com/As/getAs?sceneid=' . $sceneid.'&objID=&p=0'.'&parameter='.$cs;
+		$url = '//www.70c.com/As/getAs?sceneid=' . $sceneid.'&objID=&p=0'.'&parameter='.$cs;
 		
         $da = $this->GetCurlnew($url,$cs);
 		 
@@ -54,10 +54,10 @@ class Cj70Controller extends Controller {
 		
         if (empty($code) and $resp[obj][name] !== '该场景已关闭') {
 			 //cloudapppic/2015/5/28/445bbbd03c4a2d88.png
-			  //http://res.70c.com/cloudappmp3/2015/4/20/2f48ce529b68a81f.mp3
+			  ////res.70c.com/cloudappmp3/2015/4/20/2f48ce529b68a81f.mp3
 			  //images/sceneedit/solidcolor/c16c5d62f891d55d1fa68be7f66d80496e83ce49c3ae-TBJYXX_fw658.jpg
 			 //preg_match_all("/cloudapppic(\\/\\w+)*\.(gif|jpg|jpeg|png|bmp)/isu", $eqxcjt, $preg_pic);
-			//$da = 'http://res.70c.com/cloudapppic/crop/2015/8/5/4ffc0e82e70af299.png';
+			//$da = '//res.70c.com/cloudapppic/crop/2015/8/5/4ffc0e82e70af299.png';
 			preg_match_all("/((cloudapppic(\\/\\w+)*\.(gif|jpg|jpeg|png|bmp|svg)))/isu", $da, $array); 
 			//echo json_encode(array(
 			//	"msg" => $array
@@ -80,7 +80,7 @@ class Cj70Controller extends Controller {
 
             foreach ($pic_bg as $key => $var) {
                 $urls[$key] = pathinfo($pic_bg[$key]);
-                $this->save_pic('http://res.70c.com/' . $var, $img);
+                $this->save_pic('//res.70c.com/' . $var, $img);
 
             }
             $data['scenename_varchar'] = $resp['obj']['name'];
@@ -95,16 +95,16 @@ class Cj70Controller extends Controller {
 			//$str=str_replace('\\"','"',$resp['obj']['bgAudio']);		
 		    //$resp['obj']['bgAudio']=json_decode($str,true);
 			if (!empty($resp['obj']['image']['bgAudio']['url'])) {
-				if (preg_match('|^http://|', $resp['obj']['image']['bgAudio']['url'])) {
+				if (preg_match('|^//|', $resp['obj']['image']['bgAudio']['url'])) {
 					$mp = $resp['obj']['image']['bgAudio']['url'];
 				} elseif (isset($resp['obj']['image']['bgAudio']['url'])) {
-					$mp = 'http://res.70c.com/' . $resp['obj']['image']['bgAudio']['url'];
+					$mp = '//res.70c.com/' . $resp['obj']['image']['bgAudio']['url'];
 				}
 				$data['musicurl_varchar'] = 'syspic/mp370/' . $this->save_pic($mp, $mp3);
 			 } else {
 			}
 			
-            $pic1 = 'http://res.70c.com/' . $resp['obj']['image']['imgSrc'];
+            $pic1 = '//res.70c.com/' . $resp['obj']['image']['imgSrc'];
             $data['thumbnail_varchar'] = 'syspic/scene70/' . $this->save_pic($pic1, $img);
             $data['scenetype_int'] = $resp['obj']['type'];
 			$data['is_tpl'] = 1;
@@ -144,7 +144,7 @@ class Cj70Controller extends Controller {
 				
                 echo json_encode(array(
                     "msg" => "成功采集",
-                    "url" => 'http://' . $_SERVER['HTTP_HOST'] . '/v-' . $data['scenecode_varchar']
+                    "url" => '//' . $_SERVER['HTTP_HOST'] . '/v-' . $data['scenecode_varchar']
                 ));
             } else {
 			    //die(var_dump("数据写入错误"));
@@ -179,7 +179,7 @@ class Cj70Controller extends Controller {
             if (!empty($code[0][scenecode_varchar])) {
                 echo json_encode(array(
                     "msg" => "已经存在",
-                    "url" => 'http://' . $_SERVER['HTTP_HOST'] . '/v-' . $code[0][scenecode_varchar]
+                    "url" => '//' . $_SERVER['HTTP_HOST'] . '/v-' . $code[0][scenecode_varchar]
                 ));
             } else {
                 echo json_encode(array(
@@ -239,7 +239,7 @@ class Cj70Controller extends Controller {
 		return $sceneid;
 	}
     public function save_pic($url, $savepath = '') {
-		//$url='http://res.70c.com/cloudapppic/crop/2015/8/5/4ffc0e82e70af299.png';
+		//$url='//res.70c.com/cloudapppic/crop/2015/8/5/4ffc0e82e70af299.png';
 		 $filename = $this->get_filename($url);
 
 	 if(file_exists($savepath.$filename)){
@@ -303,7 +303,7 @@ class Cj70Controller extends Controller {
 		curl_setopt($curl, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_0);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($curl, CURLOPT_URL, $url);
-		curl_setopt($curl, CURLOPT_REFERER, 'http://www.70c.com/w/'.$cs);
+		curl_setopt($curl, CURLOPT_REFERER, '//www.70c.com/w/'.$cs);
         curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
         $resp = curl_exec($curl);
         curl_close($curl);

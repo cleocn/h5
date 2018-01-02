@@ -8,8 +8,8 @@ return array (
   'jishu_qq' => '99999999',
   'jishu_tel' => '13888888889',
   'address' => '广东省广州市天河区',
-  'tuijian_pic_url' => 'http://yixiu.pppon.com/Public/kindeditor/attached/image/20160508/20160508132849_30104.jpg',
+  'tuijian_pic_url' => '//yixiu.pppon.com/Public/kindeditor/attached/image/20160508/20160508132849_30104.jpg',
   'tuijian_url' => '#/sample',
-  'your_weixinhao_pic_url' => 'http://yixiu.pppon.com/Public/kindeditor/attached/image/20160508/20160508133109_58109.png',
-  'your_anli_pic_url' => 'http://yixiu.pppon.com/Public/kindeditor/attached/image/20160508/20160508133109_58109.png',
+  'your_weixinhao_pic_url' => '//yixiu.pppon.com/Public/kindeditor/attached/image/20160508/20160508133109_58109.png',
+  'your_anli_pic_url' => '//yixiu.pppon.com/Public/kindeditor/attached/image/20160508/20160508133109_58109.png',
 );

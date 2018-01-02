@@ -96,7 +96,7 @@ class ViewController extends Controller {
 		$ad = M('ad');
 		$where['type']  = 1;
 		$ad_logo=$ad->where($where)->select(); 
-		$logo_url='http://'.$_SERVER['HTTP_HOST'].'/Uploads'.$ad_logo[0][url];
+		$logo_url='//'.$_SERVER['HTTP_HOST'].'/Uploads'.$ad_logo[0][url];
 		$this->assign("logo_url",$logo_url);
 		//取出logo URL结束
 		//var_dump($logo_url);
@@ -109,7 +109,7 @@ class ViewController extends Controller {
 		echo "cc";die;
 		//$id = I('get.id',0);
 		//重定向浏览器 
-		//header("Location:http://".$_SERVER['HTTP_HOST']."/v-".$id); 
+		//header("Location://".$_SERVER['HTTP_HOST']."/v-".$id); 
 		//确保重定向后，后续代码不会被执行 
 		//exit;
 	}
@@ -241,7 +241,7 @@ class ViewController extends Controller {
 		 * @param unknown $url 调用JS接口页面的完整URL，不包含#及其后面部分
 		 */
 		function get_js_sdk($APP_ID,$APP_SECRET){
-			$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== off || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+			$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== off || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "//";
 			$url = $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 			
 			$argu = array();

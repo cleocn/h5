@@ -66,7 +66,7 @@ class PayController extends Controller {
 					$upresult = $order_info->where(array('id'=>$result))->save($updata);
 					if($upresult){
 						$configs = array(
-							'return_url'	=>'http://' . $_SERVER['HTTP_HOST'].'/respond.php',	//pay/usersurl服务器同步通知页面路径(必填) 
+							'return_url'	=>'//' . $_SERVER['HTTP_HOST'].'/respond.php',	//pay/usersurl服务器同步通知页面路径(必填) 
 							//'notify_url'	=>'',	//服务器异步通知页面路径(必填)     
 							'out_trade_no'	=>$updata['order_sn'],	//商户订单号(必填)
 							'subject'		=>$goodsInfo['goods_name'],	//订单名称(必填)
@@ -112,7 +112,7 @@ class PayController extends Controller {
         //必填
         //页面跳转同步通知页面路径
         $return_url = $configs['return_url'];
-        //需http://格式的完整路径，不能加?id=123这类自定义参数，不能写成http://localhost/
+        //需//格式的完整路径，不能加?id=123这类自定义参数，不能写成//localhost/
 		/****************************************************/
 		//>>>>>>>>>>>>第二步
 		//接收动态订单数据
@@ -132,7 +132,7 @@ class PayController extends Controller {
         $body = $configs['body'];
         //商品展示地址
         $show_url = $configs['show_url'];
-        //需以http://开头的完整路径，例如：http://www.xxx.com/myorder.html
+        //需以//开头的完整路径，例如：//www.xxx.com/myorder.html
 
 		$alipaySubmit = new \AlipaySubmit($alipay_config);
         //防钓鱼时间戳

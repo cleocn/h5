@@ -165,7 +165,7 @@ public function giveXd(){
 		$url = C('site_url').'/index.php?c=user&a=active&hash='.$activekey;
 		//邮件内容
 		$template = $options['template'];
-		$content = str_replace(array('http://#link#','#username#','场景秀','http://bbs.cgtblog.com'), array($url,$username,C('site_name'),C('site_url')),$template);
+		$content = str_replace(array('//#link#','#username#','场景秀','//bbs.cgtblog.com'), array($url,$username,C('site_name'),C('site_url')),$template);
 		$send_result=sp_send_email($_SESSION['email'], $title, $content, $time);
 		if($send_result['error']){
 			echo  '{"success":false,"code":1003,"msg":"激活邮件发送失败，请尝试登录后，手动发送激活邮件！","map":{"isValidateCodeLogin":"'.$send_result['message'].'"}}';

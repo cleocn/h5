@@ -2044,10 +2044,10 @@ function login_post($cookie) {
             'password' => '121212',
 			'rememberMe'=>false
             ); 
-    $url = 'http://vservice.eqxiu.com/login'; 
+    $url = '//vservice.eqxiu.com/login'; 
     $curl = curl_init();//初始化curl模块 
     curl_setopt($curl, CURLOPT_URL, $url);//登录提交的地址 
-	curl_setopt ($ch, CURLOPT_REFERER, "http://eqxiu.com/home/login");
+	curl_setopt ($ch, CURLOPT_REFERER, "//eqxiu.com/home/login");
     curl_setopt($curl, CURLOPT_HEADER, 0);//是否显示头信息 
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 0);//是否自动显示返回的信息 
     curl_setopt($curl, CURLOPT_COOKIEJAR, $cookie); //设置Cookie信息保存在指定的文件中 

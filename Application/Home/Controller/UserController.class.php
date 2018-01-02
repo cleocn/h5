@@ -377,7 +377,7 @@ hoa;
 	}
 	
 	public function msgList(){
-		echo '{"success":true,"code":200,"msg":"操作成功","obj":null,"map":{"count":5,"pageNo":1,"pageSize":5},"list":[{"id":15381137,"type":2,"bizType":3,"toUser":"4a2d8af94b7cf1db014bc3e4ebd27856","toEmail":"minglangasp@qq.com","fromUser":"4a2d8af948fd5bc40148fdbfc6640018","sendTime":1427335605000,"title":"秀点火热发售","content":"秀点火热发售，一份200元（含200个秀点），移步易企秀微信公众号，回复［0326］即可购买","status":1,"ext":null,"roleIdList":null},{"id":10765343,"type":2,"bizType":3,"toUser":"4a2d8af94b7cf1db014bc3e4ebd27856","toEmail":"minglangasp@qq.com","fromUser":"4a2d8af948fd5bc40148fdbfc6640018","sendTime":1425549612000,"title":null,"content":"易企秀产品更新2015.3.5 祝元宵快乐 http://eqxiu.com/s/fq4ZBB","status":1,"ext":null,"roleIdList":null}]}';
+		echo '{"success":true,"code":200,"msg":"操作成功","obj":null,"map":{"count":5,"pageNo":1,"pageSize":5},"list":[{"id":15381137,"type":2,"bizType":3,"toUser":"4a2d8af94b7cf1db014bc3e4ebd27856","toEmail":"minglangasp@qq.com","fromUser":"4a2d8af948fd5bc40148fdbfc6640018","sendTime":1427335605000,"title":"秀点火热发售","content":"秀点火热发售，一份200元（含200个秀点），移步易企秀微信公众号，回复［0326］即可购买","status":1,"ext":null,"roleIdList":null},{"id":10765343,"type":2,"bizType":3,"toUser":"4a2d8af94b7cf1db014bc3e4ebd27856","toEmail":"minglangasp@qq.com","fromUser":"4a2d8af948fd5bc40148fdbfc6640018","sendTime":1425549612000,"title":null,"content":"易企秀产品更新2015.3.5 祝元宵快乐 //eqxiu.com/s/fq4ZBB","status":1,"ext":null,"roleIdList":null}]}';
 	}
 	public function lists(){
 	  	
@@ -529,7 +529,7 @@ hoa;
 		session('md5str',null);
 		cookie('USERID',null);
 		cookie('MD5STR',null);
-		header("Location: http://".$_SERVER['HTTP_HOST']."");
+		header("Location: //".$_SERVER['HTTP_HOST']."");
     }
 	
 	
@@ -582,7 +582,7 @@ hoa;
 		$url = C('site_url').'/index.php?c=user&a=active&hash='.$activekey;
 		//邮件内容
 		$template = $options['template'];
-		$content = str_replace(array('http://#link#','#username#','场景秀','http://bbs.cgtblog.com'), array($url,$username,C('site_name'),C('site_url')),$template);
+		$content = str_replace(array('//#link#','#username#','场景秀','//bbs.cgtblog.com'), array($url,$username,C('site_name'),C('site_url')),$template);
 		$send_result=sp_send_email($_GET['email'], $title, $content, $time);
 		if($send_result['error']){
 			echo  '{"success":false,"code":1003,"msg":"激活邮件发送失败，请尝试登录后，手动发送激活邮件！","map":{"isValidateCodeLogin":false}}';

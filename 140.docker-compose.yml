@@ -1,0 +1,32 @@
+
+version: "3.3"
+
+services:
+  nginx:
+      image: ccr.ccs.tencentyun.com/cleocn/nginx:1.9 #cleocn/nginx:1.9
+      ports:
+          - 3080:80
+      volumes:
+        # - /Users/ljx/Downloads/新dede168/整站源码/易企秀V12.9源码/Uploads:/var/www/app/web/Uploads
+        - /Users/ljx/code/yiqixiu/V14.0:/var/www/app/web
+        # - /Users/ljx/code/eqx12.9/nginx.conf:/etc/nginx/conf.d/default.conf
+        # - vendor: /vendor
+      environment:
+          DOCUMENT_ROOT: /var/www/app/web
+          INDEX_FILE: index.php
+          PHP_FPM_SOCKET: php.local:9000
+      networks:
+        - default
+
+  php:
+      image: yappabe/php:5.3 #ccr.ccs.tencentyun.com/cleocn/php:5.3
+      ports:
+          - 9000:9000
+      volumes:
+          - /Users/ljx/code/yiqixiu/V14.0:/var/www/app/web
+          - /Users/ljx/code/phptmp:/var/www/app/web/Application/Runtime
+          # - /Users/ljx/Downloads/新dede168/整站源码/易企秀V12.9源码/Uploads:/var/www/app/web/Uploads
+      networks:
+        default:
+          aliases:
+            - php.local

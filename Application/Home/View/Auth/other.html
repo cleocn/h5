@@ -23,13 +23,13 @@
 <script>
     var HOST_BASE       = '/auth';
     var HOST_RESOURCE   = '/resource';
-    var HOST_SERVER     = "http://"+window.location.host+"/";
-    var HOST_SERVER_S1  = "http://"+window.location.host+"/";
-    var HOST_CLIENT     = "http://"+window.location.host+"/";
-    var HOST_CDN        = "http://"+window.location.host+"/";
+    var HOST_SERVER     = "//"+window.location.host+"/";
+    var HOST_SERVER_S1  = "//"+window.location.host+"/";
+    var HOST_CLIENT     = "//"+window.location.host+"/";
+    var HOST_CDN        = "//"+window.location.host+"/";
 	var client_id='{$Think.config.THINK_SDK_QQ.APP_KEY}';
 	//var redirect_uri = encodeURIComponent('{$Think.config.THINK_SDK_QQ.CALLBACK}');
-	var redirect_uri = encodeURIComponent("http://"+window.location.host+"/auth/login/other");
+	var redirect_uri = encodeURIComponent("//"+window.location.host+"/auth/login/other");
     //var redirect_uri='<php>echo urlencode(rtrim(C("site_url"),"/")."/index.php?c=otherlogin&type=qq")</php>';
 </script>
 <script src="//cdn.bootcss.com/angular.js/1.5.5/angular.min.js"></script>

@@ -24,12 +24,12 @@ return array(
         'payment_type' => 1,
         //必填，不能修改
         //服务器异步通知页面路径
-        'notify_url' => 'http://' . $_SERVER['HTTP_HOST'].'/notify.php',
-        //需http://格式的完整路径，不能加?id=123这类自定义参数
+        'notify_url' => '//' . $_SERVER['HTTP_HOST'].'/notify.php',
+        //需//格式的完整路径，不能加?id=123这类自定义参数
 
         //页面跳转同步通知页面路径
-         'return_url' =>'http://' . $_SERVER['HTTP_HOST'].'/respond.php',
-        //需http://格式的完整路径，不能加?id=123这类自定义参数，不能写成http://localhost/
+         'return_url' =>'//' . $_SERVER['HTTP_HOST'].'/respond.php',
+        //需//格式的完整路径，不能加?id=123这类自定义参数，不能写成//localhost/
 
         //卖家支付宝帐户
         'seller_email' => C('seller_email')

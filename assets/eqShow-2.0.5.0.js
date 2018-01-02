@@ -7747,7 +7747,7 @@ function(window, angular, undefined) {
 			a.path("/scene"), b.tplId = c.scene
 		};
 		var k, l;
-		document.getElementById("sharescript") ? ($("#sharescript").remove(), k = document.getElementsByTagName("head")[0], l = document.createElement("script"), l.id = "sharescript", l.src = "http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion=" + ~ (-new Date / 36e5), k.appendChild(l)) : (k = document.getElementsByTagName("head")[0], l = document.createElement("script"), l.id = "sharescript", l.src = "http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion=" + ~ (-new Date / 36e5), k.appendChild(l)), window._bd_share_config = {
+		document.getElementById("sharescript") ? ($("#sharescript").remove(), k = document.getElementsByTagName("head")[0], l = document.createElement("script"), l.id = "sharescript", l.src = "/static/api/js/share.js?cdnversion=" + ~ (-new Date / 36e5), k.appendChild(l)) : (k = document.getElementsByTagName("head")[0], l = document.createElement("script"), l.id = "sharescript", l.src = "/static/api/js/share.js?cdnversion=" + ~ (-new Date / 36e5), k.appendChild(l)), window._bd_share_config = {
 			common: {
 				bdText: "aa",
 				bdDesc: "aa",

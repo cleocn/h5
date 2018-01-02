@@ -13,6 +13,7 @@ class CjsysController extends BaseController
         $this -> display();
     } 
 
+	//音效采集
     public function yxcj()
     {
         $files = M('upfilesys');
@@ -20,8 +21,8 @@ class CjsysController extends BaseController
         $img = './Uploads/syspic/yx/';
         $img2 = 'syspic/yx/';
         login_post($cookie);
-        //$url2 = 'http://vservice.eqxiu.com/m/base/file/sysList?pageNo=1&pageSize=100&fileType=4&bizType=1&time=1435230963297';
-        $url2 = 'http://vservice.eqxiu.com/m/base/file/sysList?pageNo=1&pageSize=10&fileType=4&bizType=0&time=1467728043910';
+        //$url2 = '//vservice.eqxiu.com/m/base/file/sysList?pageNo=1&pageSize=100&fileType=4&bizType=1&time=1435230963297';
+        $url2 = '//vservice.eqxiu.com/m/base/file/sysList?pageNo=1&pageSize=10&fileType=4&bizType=0&time=1467728043910';
         $list = get_content($url2, $cookie);
         $list = json_decode($list, true);
 		//var_dump($list);die;
@@ -39,7 +40,7 @@ class CjsysController extends BaseController
             $where['filename_varchar']=$data['name'];
             $temp = $files -> where($where) -> find();
             if(empty($temp)){
-				$file['filesrc_varchar'] = $img2 . $this->save_pic('http://res.eqh5.com/' . $data['path'], $img);
+				$file['filesrc_varchar'] = $img2 . $this->save_pic('//res.eqh5.com/' . $data['path'], $img);
 				//echo $file['filesrc_varchar'];die;
             }
 
@@ -70,7 +71,7 @@ class CjsysController extends BaseController
 		if($filetype==0)
 			$filetype = 1;
         $cookie = tempnam('./cache', 'cookie');
-        $url2 = 'http://vservice.eqxiu.com/m/base/file/sysList?pageNo=' . $pageno . '&pageSize=' . $pagesize . '&fileType=' . $filetype . '&bizType=' . $biztype . '&tagId=' . $tagid . '&time=' . time();
+        $url2 = '//vservice.eqxiu.com/m/base/file/sysList?pageNo=' . $pageno . '&pageSize=' . $pagesize . '&fileType=' . $filetype . '&bizType=' . $biztype . '&tagId=' . $tagid . '&time=' . time();
         login_post($cookie);
         $list = get_content($url2, $cookie);
         $list = json_decode($list, true);
@@ -87,8 +88,8 @@ class CjsysController extends BaseController
             $data['tagid_int'] = $tagid;
             if (empty($pic))
             {
-                $data['filesrc_varchar'] = $img2 . $this->save_pic('http://res.eqh5.com/' . $var['path'], $img);
-                $data['filethumbsrc_varchar'] = $img2 . $this->save_pic('http://res.eqh5.com/' . $var['tmbPath'], $img);
+                $data['filesrc_varchar'] = $img2 . $this->save_pic('//res.eqh5.com/' . $var['path'], $img);
+                $data['filethumbsrc_varchar'] = $img2 . $this->save_pic('//res.eqh5.com/' . $var['tmbPath'], $img);
             } 
             $data['eqsrcthumb_varchar'] = $var['path'];
             $data['create_time'] = date('Y-m-d H:i:s', time());
@@ -105,7 +106,7 @@ class CjsysController extends BaseController
 		$i = 0;
 		$cookie = tempnam('./cache', 'cookie'); 
 		login_post($cookie); 
-		$url = 'http://vservice.eqxiu.com/m/base/file/tag/sys?bizType=8203';
+		$url = '//vservice.eqxiu.com/m/base/file/tag/sys?bizType=8203';
 		$list = get_content($url, $cookie);
 		//die($list);
 		$list = json_decode($list,true);
@@ -139,7 +140,7 @@ class CjsysController extends BaseController
         // 设置cookie保存路径
         $cookie = tempnam('./cache', 'cookie'); 
 		login_post($cookie);
-        $url2 = 'http://vservice.eqxiu.com/m/scene/tpl/page/list/';
+        $url2 = '//vservice.eqxiu.com/m/scene/tpl/page/list/';
 		$tagid = 1140;
 		$i = 0;
 		for($n = 0;$n <= 26;$n++){
@@ -156,7 +157,7 @@ class CjsysController extends BaseController
 			foreach ($list['list'] as $var)
 			{
 				//echo '当前循环第：<b>' . $i . $var['id'] . $var['name'] . '</b>次';
-				$urls = 'http://vservice.eqxiu.com/m/scene/pageTpl/' . $var['id'];
+				$urls = '//vservice.eqxiu.com/m/scene/pageTpl/' . $var['id'];
 				$content = get_content($urls, $cookie);
 				//var_dump($var);die;
 				//echo $content;die;
@@ -176,10 +177,10 @@ class CjsysController extends BaseController
 				//var_dump($filepath);die;
 				foreach ($filepath as $key => $vary) {
 					$content = str_replace($vary, $src2.$this->get_filename($vary), $content);
-					if(preg_match('|^http://|', $vary)){
+					if(preg_match('|^//|', $vary)){
 						$this->save_pic($vary, $img);
 					}else{
-						$this->save_pic('http://res.eqh5.com/' . $vary, $img);
+						$this->save_pic('//res.eqh5.com/' . $vary, $img);
 					}  
 				}
 				$content = preg_replace("/(syspic\/scene\/){2,}/",$src2,$content);
@@ -190,14 +191,14 @@ class CjsysController extends BaseController
 				
 				// foreach ($array[0] as $key => $_var)
 				// {
-					// $this->save_pic('http://res.eqh5.com/' . $_var, $img);
+					// $this->save_pic('//res.eqh5.com/' . $_var, $img);
 				// } 
 				$content = json_decode(trim($content,chr(239).chr(187).chr(191)), true);
 				//$content = json_decode($src3, true);
 				$data['sceneid_bigint'] = $var['sceneId'];
 				$data['pagename_varchar'] = $var['name'];
 				//var_dump($var);die;
-				$data['thumbsrc_varchar'] = $img2 . $this->save_pic('http://res.eqh5.com/' . $var['properties']['thumbSrc'], $img);
+				$data['thumbsrc_varchar'] = $img2 . $this->save_pic('//res.eqh5.com/' . $var['properties']['thumbSrc'], $img);
 				$data['tagid_int'] = $tagid + $n;
 				$data['eqsrc_varchar'] = $var['properties']['thumbSrc'];
 				$data['biztype_int'] = $var['sceneId'];
@@ -281,8 +282,8 @@ class CjsysController extends BaseController
     }
 	public function get_filetpye($url)
 	{//pppon.com
-		if(!preg_match('|^http://|', $url)){
-			$url = 'http://res.eqh5.com/' . $url;
+		if(!preg_match('|^//|', $url)){
+			$url = '//res.eqh5.com/' . $url;
 		}  
 		// mime 和 扩展名 的映射
 		$mimes=array(

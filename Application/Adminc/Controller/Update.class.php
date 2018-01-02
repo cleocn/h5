@@ -67,7 +67,7 @@ function delDirAndFile($dirName)
 // PhpConcept Library - Zip Module 2.8.2
 // --------------------------------------------------------------------------------
 // License GNU/LGPL - Vincent Blavet - August 2009
-// http://www.phpconcept.net
+// //www.phpconcept.net
 // --------------------------------------------------------------------------------
 //
 // Presentation :
@@ -76,7 +76,7 @@ function delDirAndFile($dirName)
 //   WinZip application and other tools.
 //
 // Description :
-//   See readme.txt and http://www.phpconcept.net
+//   See readme.txt and //www.phpconcept.net
 //
 // Warning :
 //   This library and the associated files are non commercial, non professional

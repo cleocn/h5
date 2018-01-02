@@ -28,7 +28,7 @@ class SceneController extends Controller{
 
     public function addpv(){
 	 	 
-		$posturl = 'http://'.$_SERVER ['HTTP_HOST'].'/?c=stat&a=statget&type=10&sceneid='.I('get.id',0);
+		$posturl = '//'.$_SERVER ['HTTP_HOST'].'/?c=stat&a=statget&type=10&sceneid='.I('get.id',0);
 		$fh = file_get_contents($posturl);
          $returnInfo = D("Scene")->addpv();
     }
@@ -493,7 +493,7 @@ class SceneController extends Controller{
 			if(!$userphone){
 				$userphone= M('users')->where('userid_int='.session('userid'))->getField('phone');
 			}
-			$cj_url='http://'.$_SERVER['HTTP_HOST'].'/index.php?c=view&id='.$_scene_list[0]['scenecode_varchar'];
+			$cj_url='//'.$_SERVER['HTTP_HOST'].'/index.php?c=view&id='.$_scene_list[0]['scenecode_varchar'];
 			$jsonstr_ka='"userphone": "'.$userphone.'", "cj_url":"'.$cj_url.'",';	
 			
 		} 
@@ -1114,7 +1114,7 @@ class SceneController extends Controller{
 			//echo htmlentities($url);			
 			 	$mulu=C('APP2');
 			$app2= $mulu? '/'.$mulu:'';
-            $posturl = 'http://'.$_SERVER ['HTTP_HOST'].$app2.'/?c=stat&a=statget&type=1&sceneid='.I('get.id',0);
+            $posturl = '//'.$_SERVER ['HTTP_HOST'].$app2.'/?c=stat&a=statget&type=1&sceneid='.I('get.id',0);
 	
 			//$fh = file_get_contents($posturl);
 			header('Location: ' . $url);	
@@ -1126,7 +1126,7 @@ class SceneController extends Controller{
 		
 		$mulu=C('APP2');
 		$app2= $mulu? '/'.$mulu:'';
-       $posturl = 'http://'.$_SERVER ['HTTP_HOST'].$app2.'/?c=stat&a=statget&type=2&sceneid='.I('get.id',0);
+       $posturl = '//'.$_SERVER ['HTTP_HOST'].$app2.'/?c=stat&a=statget&type=2&sceneid='.I('get.id',0);
 		
 		$fh = file_get_contents($posturl); 
 		$jsonstr='{"success":true,"code":200,"msg":"操作成功","obj":null,"map":null,"list":null}';
@@ -1197,7 +1197,7 @@ class SceneController extends Controller{
 			$_scene_list=$_scenepage->where($where)->find(); 
 			$elements=$_scene_list['content_text'];
 			
-			$yourweb=str_replace('http://','',C('lastpagelink'));
+			$yourweb=str_replace('//','',C('lastpagelink'));
 			$elements=str_replace(array('http:\/\/s1.eqxiu.com\/eqs\/link?','http%3A%2F%2Fwww.eqxiu.com','http%3A%2F%2Feqxiu.com','\u543e\u7231'),
 				array('?c=scene&a=link&id=','http%3A%2F%2F'.$yourweb,'http%3A%2F%2F'.$yourweb,C('lastpagetext')),$elements); 
 			

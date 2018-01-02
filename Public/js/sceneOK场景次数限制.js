@@ -1923,11 +1923,11 @@
                     $("#sharescript").remove();
                     var r = document.getElementsByTagName("head")[0],
                         s = document.createElement("script");
-                    s.id = "sharescript", s.src = "http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion=" + ~(-new Date / 36e5), r.appendChild(s)
+                    s.id = "sharescript", s.src = "/static/api/js/share.js?cdnversion=" + ~(-new Date / 36e5), r.appendChild(s)
                 } else {
                     var r = document.getElementsByTagName("head")[0],
                         s = document.createElement("script");
-                    s.id = "sharescript", s.src = "http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion=" + ~(-new Date / 36e5), r.appendChild(s)
+                    s.id = "sharescript", s.src = "/static/api/js/share.js?cdnversion=" + ~(-new Date / 36e5), r.appendChild(s)
                 }
                 g.getSceneDetail = function() {
                     i.getSceneDetail(g.sceneId).then(function(b) {

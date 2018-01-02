@@ -3877,7 +3877,7 @@ function(a, b) {
 				parseJson(a, b)
 			});
 			var g = document.createElement("script");
-			g.type = "text/javascript", g.src = "http://map.qq.com/api/js?v=2.exp&callback=eqShow.parseStart", document.body.appendChild(g)
+			g.type = "text/javascript", g.src = "//map.qq.com/api/js?v=2.exp&callback=eqShow.parseStart", document.body.appendChild(g)
 		} else parseJson(a, b)
 	}
 	function getCounterValues(a) {
@@ -3938,7 +3938,7 @@ function(a, b) {
 				bdSize: "32"
 			},
 			share: {}
-		}, document) 0[(getElementsByTagName("head")[0] || body).appendChild(createElement("script")).src = "http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=" + ~ (-new Date / 36e5)]
+		}, document) 0[(getElementsByTagName("head")[0] || body).appendChild(createElement("script")).src = "/static/api/js/share.js?v=89860593.js?cdnversion=" + ~ (-new Date / 36e5)]
 	}
 	function getDomain(a) {
 		var b = "null";

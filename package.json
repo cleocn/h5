@@ -18,6 +18,7 @@
   "homepage": "https://github.com/cleocn/h5#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-qcloud-cos-upload": "^1.0.0",
     "gulp-upload-qcloud": "^1.1.0"
   }
 }

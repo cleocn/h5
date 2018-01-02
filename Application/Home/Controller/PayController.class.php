@@ -57,7 +57,7 @@ class PayController extends Controller
 					$updata['pay_status'] = 0;
 					$upresult = $order_info->where(array('id' => $result))->save($updata);
 					if ($upresult) {
-						$configs = array('return_url' => 'http://' . $_SERVER['HTTP_HOST'] . '/respond.php', 'out_trade_no' => $updata['order_sn'], 'subject' => $goodsInfo['goods_name'], 'total_fee' => $total_fee, 'body' => '充值秀点(' . $goodsInfo['xd_value'] . '点)', 'show_url' => '',);
+						$configs = array('return_url' => '//' . $_SERVER['HTTP_HOST'] . '/respond.php', 'out_trade_no' => $updata['order_sn'], 'subject' => $goodsInfo['goods_name'], 'total_fee' => $total_fee, 'body' => '充值秀点(' . $goodsInfo['xd_value'] . '点)', 'show_url' => '',);
 						\Think\Log::write('调用支付宝接口' . '
 ' . var_export($configs, true));
 						if (C('ali_service') == 'create_partner_trade_by_buyer') {
