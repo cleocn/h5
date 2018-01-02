@@ -27,7 +27,7 @@ services:
           - /data/h5/src:/var/www/app/web
           - /data/h5/phptmp:/var/www/app/web/Application/Runtime
           - /data/h5/Uploads:/var/www/app/web/Uploads
-          - /data/h5/conf:/var/www/app/web/Application/Common/Conf
+          - /data/h5/Conf:/var/www/app/web/Application/Common/Conf
       networks:
         default:
           aliases:
