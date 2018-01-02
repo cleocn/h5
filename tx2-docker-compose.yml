@@ -9,7 +9,7 @@ services:
       volumes:
         - /data/h5/src:/var/www/app/web
         - /data/h5/Uploads:/var/www/app/web/Uploads
-        - /data/h5/conf:/var/www/app/web/Application/Common/Conf
+        - /data/h5/Conf:/var/www/app/web/Application/Common/Conf
         # - /Users/ljx/code/eqx12.9/nginx.conf:/etc/nginx/conf.d/default.conf
         # - vendor: /vendor
       environment:
