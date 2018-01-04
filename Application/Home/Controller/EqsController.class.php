@@ -119,7 +119,9 @@ class EqsController extends Controller {
 
 			public function banners(){
 				if(I('get.pageCode')=='ad_001'){
-					echo '{"success":true,"code":200,"msg":"操作成功","obj":null,"map":null,"list":[{"id":602,"path":"/Uploads/ad/2015-08-11/yq0KXlXli-CAFkDEAAAy2NZGwU0132.png","title":"免费升级企业账号，尊享更多专属权限","url":"/#/usercenter/privilege","target":"_blank","pageCode":"ad_001","sort":"4","status":1},{"id":1202,"path":"/Uploads/ad/2015-08-11/yq0KZVXli72AN9YOAAAuF_hxNCs656.png","title":"用秀点去易企秀尾页，点此购买","url":"/#/usercenter/xd","target":"_blank","pageCode":"ad_001","sort":"3","status":1}]}';
+					//echo '{"success":true,"code":200,"msg":"操作成功","obj":null,"map":null,"list":[{"id":602,"path":"/Uploads/ad/2015-08-11/yq0KXlXli-CAFkDEAAAy2NZGwU0132.png","title":"免费升级企业账号，尊享更多专属权限","url":"/#/usercenter/privilege","target":"_blank","pageCode":"ad_001","sort":"4","status":1},{"id":1202,"path":"/Uploads/ad/2015-08-11/yq0KZVXli72AN9YOAAAuF_hxNCs656.png","title":"用秀点去易企秀尾页，点此购买","url":"/#/usercenter/xd","target":"_blank","pageCode":"ad_001","sort":"3","status":1}]}';
+					echo '{"success":true,"code":200,"msg":"操作成功","obj":null,"map":null,"list":[]}';
+					
 					exit();
 					}
 			//if(I('get.pageCode')=='index'){		

@@ -5235,7 +5235,7 @@ function(window, angular, undefined) {
 			return d
 		}), i.addComponent("4", function(a) {
 			var b = document.createElement("img");
-			return b.id = a.id, b.setAttribute("ctype", a.type), b.setAttribute("class", "element comp_image editable-image"), /^http.*/.test(a.properties.src) ? b.src = a.properties.src : b.src = PREFIX_FILE_HOST + a.properties.src, "403" == a.type && a.properties.wxSrc && isWeixin() && (b.style.display = "none"), b
+			return b.id = a.id, b.setAttribute("ctype", a.type), b.setAttribute("class", "element comp_image editable-image"), /^http.*/.test(a.properties.originSrc) ? b.src = a.properties.originSrc : b.src = PREFIX_FILE_HOST + a.properties.originSrc, "403" == a.type && a.properties.wxSrc && isWeixin() && (b.style.display = "none"), b
 		}), i.addComponent("h", function(b) {
 			var c, d;
 			if (b.properties.src) return c = document.createElementNS(eqxiuSvg.NAMESPACE, "svg"), c.setAttribute("class", "element svg-element"), $.ajax({
@@ -5358,7 +5358,7 @@ function(window, angular, undefined) {
 				a.css.width || (a.css.width = "180px");
 				var c = 180 * parseInt(a.properties.pics[0].height) / parseInt(a.properties.pics[0].width);
 				return a.css.height || (a.css.height = c + "px"), $.each(a.properties.pics, function(a, c) {
-					var d = $('<img src="' + PREFIX_FILE_HOST + c.src + '">');
+					var d = $('<img src="' + PREFIX_FILE_HOST + c.originSrc + '">');
 					d.css({
 						width: "100%",
 						height: "100%",
@@ -19927,7 +19927,7 @@ function(window, angular, undefined) {
 		}, a.reset = function() {
 			a.user = {}, a.retrieve = {}
 		};
-		var n = "http://api.geetest.com/get.php?gt=1ebc844c9e3a8c23e2ea4b567a8afd2d&time=" + (new Date).getTime();
+		var n = "https://api.geetest.com/get.php?gt=1ebc844c9e3a8c23e2ea4b567a8afd2d&time=" + (new Date).getTime();
 		a.validateCodeUrl = g.trustAsResourceUrl(n), b(function() {
 			$('input[name="userEmail"]').focus()
 		}, 300), a.phone = !1, a.phonePwd = function() {
@@ -24702,7 +24702,7 @@ function(window, angular, undefined) {
 
 	
 	}]), angular.module("header.tpl.html", []).run(["$templateCache", function(a) {
-		a.put("header.tpl.html", '<div class=header-wap><div class=header-contain><div class="same-content clearfix"><div class=head_nav ng-if=showToolBar();><ul class="clearfix head_navs"><li class=background-color-width-change ng-class="{isActive: isActive == \'main\'}"><a href=/#/main>H5场景</a></li><li ng-class="{isActive: isActive == \'customer\'}" class=background-color-width-change><a href=/#/main/customer>客户</a></li><li ng-class="{isActive: isActive == \'show\'}" class=background-color-width-change><a href=/#/show target=_blank>秀场</a></li><!--<li ng-class="{isActive: isActive == \'privilege\'}"><a href=/#/privilege>会员特权</a></li>--></ul><login-toolbar></login-toolbar></div><a href=#/main class="hint--bottom hint--rounded " id=logo><img ng-src="{{logoSrc}}" alt=""></a></div></div></div>')
+		a.put("header.tpl.html", '<div class=header-wap><div class=header-contain><div class="same-content clearfix"><div class=head_nav ng-if=showToolBar();><ul class="clearfix head_navs"><li class=background-color-width-change ng-class="{isActive: isActive == \'main\'}"><a href=/#/main>H5场景</a></li><li ng-class="{isActive: isActive == \'show\'}" class=background-color-width-change><a href=/#/show target=_blank>秀场</a></li><!--<li ng-class="{isActive: isActive == \'privilege\'}"><a href=/#/privilege>会员特权</a></li>--></ul><login-toolbar></login-toolbar></div><a href=#/main class="hint--bottom hint--rounded " id=logo><img ng-src="{{logoSrc}}" alt=""></a></div></div></div>')
 	}]), angular.module("help.tpl.html", []).run(["$templateCache", function(a) {
 		a.put("help.tpl.html", '<div ng-include="\'header.tpl.html\'"></div><div id=usercenter class=min_contain><div class="main clearfix"><div class=help_content><h1>快速获得秀点</h1><p><span>1.场景展示得秀点</span></p><table><tr><th class=col-sm-3><span>账号属性</span></th><th class=col-sm-3><span>获取秀点条件</span></th><th class=col-sm-8><span>秀点计算</span></th></tr><tr><td><span>普通账号</span></td><td><span>分享尾页展示</span></td><td><span>5000展示=100秀点</span></td></tr><tr><td><span>高级账号</span></td><td><span>末页底标展示</span></td><td><span>10000展示=100秀点</span></td></tr><tr><td><span>服务账号</span></td><td><span>末页底标展示</span></td><td><span>10000展示=100秀点</span></td></tr></table><p><span>2.推荐会员得秀点</span></p><table><tr><td class=col-sm-3><span>推荐会员</span></td><td class=col-sm-3><span>注册会员</span></td><td class=col-sm-8><span>推荐一个会员，可以获得20个秀点</span></td></tr></table><h1 style="margin:20px 0"><span>秀点使用</span></h1><table><tr><th class=col-sm-3><span>账号属性</span></th><th class=col-sm-3><span>使用内容</span></th><th class=col-sm-8><span>所需秀点</span></th></tr><tr><td><span>普通账号</span></td><td><span>去除分享尾页</span></td><td><span>100个</span></td></tr><tr><td><span>高级账号</span></td><td><span>去除末页底标</span></td><td><span>100个</span></td></tr><tr><td><span>服务账号</span></td><td><span>去除末页底标/修改载入logo</span></td><td><span>100个/500个</span></td></tr></table></div></div></div><div ng-include="\'footer.tpl.html\'"></div>')
 	}]), angular.module("home/home.tpl.html", []).run(["$templateCache", function(a) {

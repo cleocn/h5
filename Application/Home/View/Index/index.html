@@ -11,7 +11,7 @@
 <meta property="qc:admins" content="{$Think.config.THINK_SDK_QQ.qqqqqq52}" />
 <meta property="wb:webmaster" content="354b970d8cd61602" />
 <title>{$Think.config.site_title}</title>
-<script src="//tajs.qq.com/stats?sId=45828183" charset="UTF-8"></script>
+<!-- <script src="//tajs.qq.com/stats?sId=45828183" charset="UTF-8"></script> -->
 
 <script>
 var JSON_URL = "//"+window.location.host+"/index.php";
@@ -64,6 +64,7 @@ var JSON_URL = "//"+window.location.host+"/index.php";
   var redirect_uri='<php>echo urlencode(rtrim(C("site_url"),"/")."/index.php?c=otherlogin&type=qq")</php>';
   var lastpagelink = '<php>echo C("lastpagelink")</php>';
   var lastpagetext_color = '<php>echo C("lastpagetext_color")</php>';
+  var lastpagelogo = '<php>echo C("lastpagelogo")</php>';
   
   
   var mobilecheck = function() {

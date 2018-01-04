@@ -5,8 +5,8 @@
 namespace Home\Model;
 use Think\Model;
 class GeetestModel extends Model {
-	const GT_API_SERVER  = '//api.geetest.com';
-	const GT_SSL_SERVER  = '//api.geetest.com';
+	const GT_API_SERVER  = 'https://api.geetest.com';
+	const GT_SSL_SERVER  = 'https://api.geetest.com';
 	const GT_SDK_VERSION  = 'php_2.15.4.2.2';
 
 	private $captcha_id;

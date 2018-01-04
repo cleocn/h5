@@ -707,7 +707,7 @@ angular.module("app", ["ngRoute", "spread", "ui.bootstrap", "ngSanitize", "ui.se
 			e ? (d.sysMsgs = a.data.list, d.sysNewCount = a.data.map.count) : (d.newMsgs = a.data.list, d.newMsgCount = a.data.map.count > 9 ? "9+" : a.data.map.count)
 		})
 	}
-	var u = "http://api.geetest.com/get.php?callback=initCaptcha&time=" + (new Date).getTime();
+	var u = "https://api.geetest.com/get.php?callback=initCaptcha&time=" + (new Date).getTime();
 	c.validateCodeUrl = q.trustAsResourceUrl(u), r() && (c.isSafari = !0), c.copyUrl = function() {
 		alert("该浏览器不支持复制，请手动选中、复制、粘贴")
 	}, c.userXd = 0, c.getUserXd = function() {
@@ -9132,7 +9132,7 @@ angular.module("app", ["ngRoute", "spread", "ui.bootstrap", "ngSanitize", "ui.se
 	}, b.reset = function() {
 		b.user = {}, b.retrieve = {}
 	};
-	var o = "http://api.geetest.com/get.php?gt=1ebc844c9e3a8c23e2ea4b567a8afd2d&time=" + (new Date).getTime();
+	var o = "https://api.geetest.com/get.php?gt=1ebc844c9e3a8c23e2ea4b567a8afd2d&time=" + (new Date).getTime();
 	b.validateCodeUrl = h.trustAsResourceUrl(o), c(function() {
 		$('input[name="userEmail"]').focus()
 	}, 300), b.phone = !1, b.phonePwd = function() {
@@ -11972,7 +11972,7 @@ angular.module("app", ["ngRoute", "spread", "ui.bootstrap", "ngSanitize", "ui.se
 
 	
 	}]), angular.module("header.tpl.html", []).run(["$templateCache", function(a) {
-	a.put("header.tpl.html", '<div class=header-wap><div class=header-contain><div class="same-content clearfix"><div class=head_nav ng-if=showToolBar();><ul class="clearfix head_navs"><li class=background-color-width-change ng-class="{isActive: isActive == \'main\'}"><a href=/#/main>H5场景</a></li><li ng-if="(user.type == 21 && userPermit.indexOf(\',1101,\') >= 0) || user.type !=21" ng-class="{isActive: isActive == \'customer\'}" class=background-color-width-change><a href=/#/main/customer>客户</a></li><li ng-class="{isActive: isActive == \'show\'}" class=background-color-width-change><a href=/#/show target=_blank>秀场</a></li></ul><login-toolbar></login-toolbar></div><a href=/#/main class="hint--bottom hint--rounded" id=logo><img ng-src="{{logoSrc}}"></a></div></div></div>')
+	a.put("header.tpl.html", '<div class=header-wap><div class=header-contain><div class="same-content clearfix"><div class=head_nav ng-if=showToolBar();><ul class="clearfix head_navs"><li class=background-color-width-change ng-class="{isActive: isActive == \'main\'}"><a href=/#/main>H5场景</a></li><li ng-class="{isActive: isActive == \'show\'}" class=background-color-width-change><a href=/#/show target=_blank>秀场</a></li></ul><login-toolbar></login-toolbar></div><a href=/#/main class="hint--bottom hint--rounded" id=logo><img ng-src="{{logoSrc}}"></a></div></div></div>')
 }]), angular.module("main/console/group.tpl.html", []).run(["$templateCache", function(a) {
 	a.put("main/console/group.tpl.html", '<div class=modal-header><span ng-show=!title>新建组</span> <span ng-show=title>{{title}}</span></div><div class="modal-body add-new-cat" forbidden-list-close><input type=text class=form-control ng-model=group.name placeholder="设置名称"></div><p ng-show=authError style=text-align:center>{{authError}}</p><div class="btn-contain btn-small"><a class="btn-main login" ng-click=confirm()>确认</a> <a class="btn-grey0 cancel" ng-click=cancel()>取消</a></div>')
 }]), angular.module("main/downApp.tpl.html", []).run(["$templateCache", function(a) {

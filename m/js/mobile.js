@@ -31,7 +31,7 @@ $.ajax({
 			c = document.body.offsetWidth;
 		$(b).each(function(a) {
 			var c = $('<div class="list"/>'),
-				d = $('<a target="_blank" href="' + PREFIX_S1_URL + "v-" + this.code + '" id="img_' + this.code + '"/>'),
+				d = $('<a target="_blank" href="' + PREFIX_S1_URL + "v/" + this.code + '" id="img_' + this.code + '"/>'),
 				e = $('<div class="name" />').html(b[a].name);
 			d.appendTo(c), e.appendTo(c), c.appendTo("#slider"), d.css("background-image", "url(" + PREFIX_FILE_HOST + this.image.imgSrc + ")")
 		}), $(".list").css("float", "left"), $(".name").css("width", c / 2 - 20), $(".list a").css("display", "block"), $(".list a").css("width", c / 2 - 20), $(".list a").css("height", c / 2 - 20), $(".list a").css("background-size", "cover")
