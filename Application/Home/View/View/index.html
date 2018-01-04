@@ -2,18 +2,18 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="baidu-site-verification" content="0" />
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="0">
     <title>{$confinfo2[title]}</title>
-    <meta name="keywords" content="移动场景应用自营销管家,移动场景自营销管家,移动场景自营销工具,活动自营销管家,场景展示,免费的报名页,收集潜在客户,二次营销,轻CRM,提高移动场景营销效果" />
-    <meta id="metaDescription" name="description" content="{$confinfo2[title]}" />
-    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
-    <META HTTP-EQUIV="Cache-Control" CONTENT="no-store, must-revalidate">
-    <META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
-    <META HTTP-EQUIV="expires" CONTENT="0">
-    <meta name="viewport" id="viewport" content="width=320, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="{$Think.config.site_url_cdn_static}/view/css/eqShow-2.1.5.3.css?v=<php>$version = './Application/Common/Conf/ver.php'; $ver = include($version); $ver = $ver['ver'];$ver = substr($ver,-4);echo $ver;</php>" />
+    <meta name="keywords" content="移动场景应用自营销管家,移动场景自营销管家,移动场景自营销工具,活动自营销管家,场景展示,免费的报名页,收集潜在客户,二次营销,轻CRM,提高移动场景营销效果">
+    <meta id="metaDescription" name="description" content="{$confinfo2[title]}">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-store, must-revalidate">
+    <meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+    <meta http-equiv="expires" content="0">
+    <meta name="viewport" id="viewport" content="width=320,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{$Think.config.site_url_cdn_static}/view/css/eqShow-2.1.5.3.css?v=<php>$version = './Application/Common/Conf/ver.php'; $ver = include($version); $ver = $ver['ver'];$ver = substr($ver,-4);echo $ver;</php>">
     <script>
         var your_demain = '<php>if(strpos("//",C("site_url"))!==false)echo "//"; echo rtrim(C("site_url"),"/")</php>';
         var your_webname = '<php>echo C("site_name")</php>';
@@ -24,7 +24,7 @@
         var lastpagetext = '<php>echo C("lastpagetext")</php>';
         var jubao_link = '<php>echo C("jubao_link")</php>';
     </script>
-    <link rel="stylesheet" href="{$Think.config.site_url_cdn_static}/Public/css/my52.css" />
+    <link rel="stylesheet" href="{$Think.config.site_url_cdn_static}/Public/css/my52.css">
 </head>
 
 <body>
@@ -51,7 +51,7 @@
             <div id="verifyCode" class="verifyCode">
                 <div class="container">
                     <div class="scene-cover">
-                        <img class="cover-img" src="{$Think.config.site_url_cdn_uploads}/Uploads/{$confinfo2[imgsrc]}" />
+                        <img class="cover-img" src="{$Think.config.site_url_cdn_uploads}/Uploads/{$confinfo2[imgsrc]}">
                     </div>
                     <div class="scene-name">{$confinfo2[title]}</div>
 
@@ -88,35 +88,36 @@
         </div>
         <div class="bottom"></div>
     </div>
+    <script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 
-</body>
-<script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="{$Think.config.site_url_cdn_static}/Public/css/waiwan/jquery.min.js"></script>
+    <script>
+        (function(window, $) {
+            window.PREFIX_URL = "https://" + window.location.host + "/";
+            window.PREFIX_S1_URL = "https://" + window.location.host + "/"; //"/json/";
+            window.PREFIX_S2_URL = "https://" + window.location.host + "/index.php";
+            window.PREFIX_S6_URL = "https://" + window.location.host + "/index.php";
+            window.PREFIX_HOST = "https://" + window.location.host + "/index.php";
+            window.PREFIX_HOST1 = "https://" + window.location.host + "/index.php";
+            window.PREFIX_SHOW_HOST = "https://" + window.location.host + "/index.php";
+            window.TRACK_HOST = "/////";
+            window.PREFIX_FILE_HOST = "{$Think.config.site_url_cdn_uploads}/Uploads/";
+            window.PREFIX_COMPANY_HOST_ARRAY = ["//" + window.location.host, "//" + window.location.host];
+            window.OLD_FILE_HOST = "https://" + window.location.host + "/index.php";
+            window.CLIENT_CDN = "https://" + window.location.host + "/";
+            window.clientWidth = document.documentElement.clientWidth;
+            window.clientHeight = document.documentElement.clientHeight;
+            window.PREFIX_HOST_ARRAY = [
+                "https://" + window.location.host,
+                "https://" + window.location.host
+            ];
+    
+        })(window, jQuery)
+    </script>
+    
+<script type="text/javascript" src="{$Think.config.site_url_cdn_static}/dist/eqShow-preview.68122163e94d2495607e.js?68122163e94d2495607e"></script></body>
 
-<script src="{$Think.config.site_url_cdn_static}/Public/css/waiwan/jquery.min.js"></script>
-<script>
-    (function(window, $) {
-        window.PREFIX_URL = "https://" + window.location.host + "/";
-        window.PREFIX_S1_URL = "https://" + window.location.host + "/"; //"/json/";
-        window.PREFIX_S2_URL = "https://" + window.location.host + "/index.php";
-        window.PREFIX_S6_URL = "https://" + window.location.host + "/index.php";
-        window.PREFIX_HOST = "https://" + window.location.host + "/index.php";
-        window.PREFIX_HOST1 = "https://" + window.location.host + "/index.php";
-        window.PREFIX_SHOW_HOST = "https://" + window.location.host + "/index.php";
-        window.TRACK_HOST = "/////";
-        window.PREFIX_FILE_HOST = "{$Think.config.site_url_cdn_uploads}/Uploads/";
-        window.PREFIX_COMPANY_HOST_ARRAY = ["//" + window.location.host, "//" + window.location.host];
-        window.OLD_FILE_HOST = "https://" + window.location.host + "/index.php";
-        window.CLIENT_CDN = "https://" + window.location.host + "/";
-        window.clientWidth = document.documentElement.clientWidth;
-        window.clientHeight = document.documentElement.clientHeight;
-        window.PREFIX_HOST_ARRAY = [
-            "https://" + window.location.host,
-            "https://" + window.location.host
-        ];
-
-    })(window, jQuery)
-</script>
-<script type="text/javascript" src="{$Think.config.site_url_cdn_static}/view/eqShow-preview-2.1.5.3.js?v=<php>$version = './Application/Common/Conf/ver.php'; $ver = include($version); $ver = $ver['ver'];$ver = substr($ver,-4);echo $ver;</php>"></script>
+<!-- <script type="text/javascript" src="{$Think.config.site_url_cdn_static}/view/eqShow-preview-2.1.5.3.js?v=<php>$version = './Application/Common/Conf/ver.php'; $ver = include($version); $ver = $ver['ver'];$ver = substr($ver,-4);echo $ver;</php>"></script> -->
 <!--  <script type="text/javascript" src="/view/eqShow-2.0.5.0.js?v={$Think.config.jsver}"></script> -->
 
 <script>

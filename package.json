@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack -d --watch",
+    "prod": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,8 +19,11 @@
   },
   "homepage": "https://github.com/cleocn/h5#readme",
   "devDependencies": {
+    "clean-webpack-plugin": "^0.1.17",
     "gulp": "^3.9.1",
     "gulp-qcloud-cos-upload": "^1.0.0",
-    "gulp-upload-qcloud": "^1.1.0"
+    "gulp-upload-qcloud": "^1.1.0",
+    "html-webpack-plugin": "^2.30.1",
+    "webpack": "^3.10.0"
   }
 }

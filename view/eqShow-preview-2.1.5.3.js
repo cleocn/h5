@@ -3711,7 +3711,7 @@ function(a) {
 			f = /^http.*/.test(b.properties.originSrc) ? b.properties.originSrc : PREFIX_FILE_HOST + b.properties.originSrc;
 		a.isMobileApp() || (f = f.replace(OLD_FILE_HOST, PREFIX_FILE_HOST));
 		var g = /\?imageMogr2/,
-			h = /.svg/;
+			h = /.svg/; 
 		
 		if (e.test(f) && !h.test(f)) if (g.test(f)) f += "/strip";
 		else {
