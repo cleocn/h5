@@ -3,8 +3,8 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
-    'eqShow-preview': './view/eqShow-preview-2.1.5.3.js',
-    'eqShow-site': './assets/eqShow-site-2.1.5.3.js',
+    'eqShowPreview': './view/eqShow-preview-2.1.5.3.js',
+    'eqShowSite': './assets/eqShow-site-2.1.5.3.js',
     'eqShow': './view/eqShow-2.0.5.0.js',
   },
   output: {
@@ -21,17 +21,17 @@ module.exports = {
       collapseWhitespace: false,
     },
     hash: true,
-    chunks: ['eqShow-site']
+    chunks: ['eqShowSite']
   }),
   new HtmlWebpackPlugin({
     template:  './Application/Home/View/View/index.tpl.html',
     filename: '../Application/Home/View/View/index.html',
-    inject: 'body',
+    inject: false,//'body',
     minify: {
       collapseWhitespace: false,
     },
     hash: true,
-    chunks: ['eqShow-preview','eqShow']
+    chunks: ['eqShowPreview','eqShow']
   }),
 ]
 };

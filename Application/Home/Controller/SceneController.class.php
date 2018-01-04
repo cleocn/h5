@@ -1073,7 +1073,7 @@ class SceneController extends Controller{
 		$where2['is_tpl'] = 1;
 		$where2['thumbsrc_varchar'] = array('NEQ','NULL'); 
 		//$count = $_scene->where($where)->order('eqid_int desc')->count();
-		$_scene_list1 = $_scene->where($where)->select();
+		$_scene_list1 = $_scene->where($where)->getField('pageid_bigint,pagename_varchar,thumbsrc_varchar');//->select();
 		$_scene_list2 = $_scene2->where($where2)->select();
 		//var_dump($_scene_list2);die;
 		$_scene_list0 = array_merge($_scene_list1,$_scene_list2);
