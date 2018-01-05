@@ -281,6 +281,8 @@ class ScenepagesysModel extends Model {
 		$m_scene=M('scene');
 		$m_scenepage=M('scenepage');
 		$datas = json_decode(file_get_contents("php://input"),true);
+
+		S('scene_' + $datas['sceneId'],null);//删除缓存 cleo
 		//var_dump($datas);die;
 		$where['pageid_bigint'] = $datas['id'];
 		$where['sceneid_bigint'] = $datas['sceneId'];

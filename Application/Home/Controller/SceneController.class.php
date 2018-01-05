@@ -229,6 +229,15 @@ class SceneController extends Controller{
     }
 	
     public function view(){
+		$cache_id = 'scene_' + I('get.id','0');
+		// 读取缓存
+		$cache_json = S($cache_id);
+		if ($cache_json){
+			echo $cache_json;
+			return;
+		}//end 
+		
+
 		$_scene = M('scene');
 		$isPreview = I('get.preview',0);
 		//$where['uid']  = $datainfo['uid'];
@@ -360,6 +369,9 @@ class SceneController extends Controller{
 		
 		$jsonstr = $jsonstr.rtrim($jsonstrtemp,',').'';
 		$jsonstr = $jsonstr.']}';
+		
+		// 缓存数据300秒
+		S($cache_id,$jsonstr,300);//cleo
 		echo $jsonstr;
     }
 
