@@ -1,9 +1,12 @@
+
+
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 const uglify = require('uglifyjs-webpack-plugin');
 
 module.exports = {
+  devtool: false,
   entry: {
     'eqShowPreview': './view/eqShow-preview-2.1.5.3.js',
     'eqShowSite': './assets/eqShow-site-2.1.5.3.js',
@@ -21,7 +24,7 @@ module.exports = {
     filename: '../Application/Home/View/Index/index.html',
     inject: 'head',
     minify: {
-      collapseWhitespace: false,
+      collapseWhitespace: true,
     },
     hash: true,
     chunks: ['eqShowSite']
@@ -31,7 +34,7 @@ module.exports = {
     filename: '../Application/Home/View/View/index.html',
     inject: false,//'body',
     minify: {
-      collapseWhitespace: false,
+      collapseWhitespace: true,
     },
     hash: true,
     chunks: ['eqShowPreview','eqShow']

@@ -3730,7 +3730,7 @@ function(a) {
 				var n;
 				n = mobilecheck() ? '<svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"><g><image width="100%" height="100%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="' + f + '" filter="url(#' + b.id + ')"></image><defs><filter id="' + b.id + '"><feColorMatrix class="saturation" color-interpolation-filters="sRGB" type="matrix" values="' + m.path + '"></feColorMatrix></filter></defs></g></svg>' : '<svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"><g><image width="100%" height="100%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="' + f + '" filter="url(' + window.location.href + "#" + b.id + ')"></image><defs><filter id="' + b.id + '"><feColorMatrix class="saturation" color-interpolation-filters="sRGB" type="matrix" values="' + m.path + '"></feColorMatrix></filter></defs></g></svg>', d.innerHTML = n
 			}
-		} else d = document.createElement("img"), d.id = b.id, d.setAttribute("ctype", b.type), d.setAttribute("class", "element comp_image editable-image"), d.src = f;
+		} else d = document.createElement("img"), d.id = b.id, d.setAttribute("ctype", b.type), d.setAttribute("class", "element comp_image editable-image test"), d.src = f;
 		return "" + b.type == "403" && d.setAttribute("data-event", "1120611"), "" + b.type == "403" && b.properties.wxSrc && isWeixin() && (d.style.display = "none"), d
 	}), t.addComponent("h", function(a) {
 		var b, c;
@@ -3840,7 +3840,7 @@ function(a) {
 		}
 	}), t.addComponent("n", function(a) {
 		if (a.properties && a.properties.pics.length) {
-			var b = $('<div id="' + a.id + '" class="random-event element comp_image editable-image" ctype="' + a.type + '"></div>');
+			var b = $('<div id="' + a.id + '" class="random-event element comp_image editable-image test2" ctype="' + a.type + '"></div>');
 			a.css.width || (a.css.width = "180px");
 			var c = 180 * parseInt(a.properties.pics[0].height, 10) / parseInt(a.properties.pics[0].width, 10);
 			return a.css.height || (a.css.height = c + "px"), $.each(a.properties.pics, function(a, c) {

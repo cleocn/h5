@@ -1509,7 +1509,7 @@ function(a) {
 		return d
 	}), i.addComponent("4", function(a) {
 		var b = document.createElement("img");
-		return b.id = a.id, b.setAttribute("ctype", a.type), b.setAttribute("class", "element comp_image editable-image"), /^http.*/.test(a.properties.originSrc) ? b.src = a.properties.originSrc : b.src = PREFIX_FILE_HOST + a.properties.originSrc, "403" == a.type && a.properties.wxSrc && isWeixin() && (b.style.display = "none"), b
+		return b.id = a.id, b.setAttribute("ctype", a.type), b.setAttribute("class", "element comp_image editable-image test3"), /^http.*/.test((a.properties.originSrc || a.properties.src)) ? b.src = (a.properties.originSrc || a.properties.src) : b.src = PREFIX_FILE_HOST + (a.properties.originSrc || a.properties.src), "403" == a.type && a.properties.wxSrc && isWeixin() && (b.style.display = "none"), b
 	}), i.addComponent("h", function(b) {
 		var c, d;
 		if (b.properties.src) return c = document.createElementNS(eqxiuSvg.NAMESPACE, "svg"), c.setAttribute("class", "element svg-element"), $.ajax({
@@ -1628,7 +1628,7 @@ function(a) {
 		}
 	}), i.addComponent("n", function(a) {
 		if (a.properties && a.properties.pics.length) {
-			var b = (a.css.width, a.css.height, $('<div id="' + a.id + '" class="random-event element comp_image editable-image" ctype="' + a.type + '"></div>'));
+			var b = (a.css.width, a.css.height, $('<div id="' + a.id + '" class="random-event element comp_image editable-image test4" ctype="' + a.type + '"></div>'));
 			a.css.width || (a.css.width = "180px");
 			var c = 180 * parseInt(a.properties.pics[0].height) / parseInt(a.properties.pics[0].width);
 			return a.css.height || (a.css.height = c + "px"), $.each(a.properties.pics, function(a, c) {

@@ -1,101 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="baidu-site-verification" content="0">
-    <title>{$confinfo2[title]}</title>
-    <meta name="keywords" content="移动场景应用自营销管家,移动场景自营销管家,移动场景自营销工具,活动自营销管家,场景展示,免费的报名页,收集潜在客户,二次营销,轻CRM,提高移动场景营销效果">
-    <meta id="metaDescription" name="description" content="{$confinfo2[title]}">
-    <meta http-equiv="pragma" content="no-cache">
-    <meta http-equiv="Cache-Control" content="no-store, must-revalidate">
-    <meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
-    <meta http-equiv="expires" content="0">
-    <meta name="viewport" id="viewport" content="width=320,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="{$Think.config.site_url_cdn_static}/view/css/eqShow-2.1.5.3.css?v=<php>$version = './Application/Common/Conf/ver.php'; $ver = include($version); $ver = $ver['ver'];$ver = substr($ver,-4);echo $ver;</php>">
-    <script>
-        var your_demain = '<php>if(strpos("//",C("site_url"))!==false)echo "//"; echo rtrim(C("site_url"),"/")</php>';
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="baidu-site-verification" content="0"><title>{$confinfo2[title]}</title><meta name="keywords" content="移动场景应用自营销管家,移动场景自营销管家,移动场景自营销工具,活动自营销管家,场景展示,免费的报名页,收集潜在客户,二次营销,轻CRM,提高移动场景营销效果"><meta id="metaDescription" name="description" content="{$confinfo2[title]}"><meta http-equiv="pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-store, must-revalidate"><meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT"><meta http-equiv="expires" content="0"><meta name="viewport" id="viewport" content="width=320,initial-scale=1,maximum-scale=1,user-scalable=no"><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"><link rel="stylesheet" href="{$Think.config.site_url_cdn_static}/view/css/eqShow-2.1.5.3.css?v=<php>$version = './Application/Common/Conf/ver.php'; $ver = include($version); $ver = $ver['ver'];$ver = substr($ver,-4);echo $ver;</php>"><script>var your_demain = '<php>if(strpos("//",C("site_url"))!==false)echo "//"; echo rtrim(C("site_url"),"/")</php>';
         var your_webname = '<php>echo C("site_name")</php>';
         var logo_url = '<php>echo C("site_name")</php>';
         var lastpagelink = '<php>echo C("lastpagelink")</php>';
         var lastpagetext_color = '<php>echo C("lastpagetext_color")</php>';
         var lastpagelogo = '<php>echo C("lastpagelogo")</php>';
         var lastpagetext = '<php>echo C("lastpagetext")</php>';
-        var jubao_link = '<php>echo C("jubao_link")</php>';
-    </script>
-    <link rel="stylesheet" href="{$Think.config.site_url_cdn_static}/Public/css/my52.css">
-</head>
-
-<body>
-
-    <div id="ppitest" style="width:1in;visible:hidden;padding:0px"></div>
-    <div class="p-index main phoneBox" id="con" style="display: none;">
-        <div class="top"></div>
-        <div class="phone_menubar"></div>
-        <div class="scene_title_baner" style="display: none">
-            <div class="scene_title">{$confinfo2[title]}</div>
-        </div>
-        <div class="nr" id="nr">
-            <div id="audio_btn" class="off">
-                <div id="yinfu"></div>
-                <audio loop src="" id="media" autoplay="" preload></audio>
-            </div>
-            <div id="loading" class="loading">
-                <div class="loadbox">
-                    <div class="loadlogo" style="background-image: url('{$Think.config.site_url_cdn_uploads}/Uploads/<php>if($sceneinfo[loadinglogo]):</php>{$sceneinfo[loadinglogo]}<php>else:</php>{$confinfo2[imgsrc]} <php>endif;</php>');"></div>
-                    <div class="loadbg"></div>
-                </div>
-            </div>
-            <php>if($sceneinfo['accesscode']):</php>
-            <div id="verifyCode" class="verifyCode">
-                <div class="container">
-                    <div class="scene-cover">
-                        <img class="cover-img" src="{$Think.config.site_url_cdn_uploads}/Uploads/{$confinfo2[imgsrc]}">
-                    </div>
-                    <div class="scene-name">{$confinfo2[title]}</div>
-
-                    <div class="confirm-password">
-                        <label class="verify-label" for="password">请输入访问密码</label>
-                        <div class="verify-tips" id="verifyTip">
-                            <ul class="password-indicator">
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </ul>
-                        </div>
-                        <div class="password-numbers">
-                            <span>1</span>
-                            <span>2</span>
-                            <span>3</span>
-                            <span>4</span>
-                            <span>5</span>
-                            <span>6</span>
-                            <span>7</span>
-                            <span>8</span>
-                            <span>9</span>
-                            <span>0</span>
-                        </div>
-                        <div class="password-operation">
-                            <span class="btn-clear" id="btnClear">清空</span>
-                            <span class="btn-cancel" id="btnCancel">取消</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <php>endif;</php>
-        </div>
-        <div class="bottom"></div>
-    </div>
-   
-
-</body>
-<script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-
-<script src="{$Think.config.site_url_cdn_static}/Public/css/waiwan/jquery.min.js"></script>
-<script>
-    (function(window, $) {
+        var jubao_link = '<php>echo C("jubao_link")</php>';</script><link rel="stylesheet" href="{$Think.config.site_url_cdn_static}/Public/css/my52.css"></head><body><div id="ppitest" style="width:1in;visible:hidden;padding:0px"></div><div class="p-index main phoneBox" id="con" style="display: none;"><div class="top"></div><div class="phone_menubar"></div><div class="scene_title_baner" style="display: none"><div class="scene_title">{$confinfo2[title]}</div></div><div class="nr" id="nr"><div id="audio_btn" class="off"><div id="yinfu"></div><audio loop src="" id="media" autoplay="" preload></audio></div><div id="loading" class="loading"><div class="loadbox"><div class="loadlogo" style="background-image: url('{$Think.config.site_url_cdn_uploads}/Uploads/<php>if($sceneinfo[loadinglogo]):</php>{$sceneinfo[loadinglogo]}<php>else:</php>{$confinfo2[imgsrc]} <php>endif;</php>');"></div><div class="loadbg"></div></div></div><php>if($sceneinfo['accesscode']):</php><div id="verifyCode" class="verifyCode"><div class="container"><div class="scene-cover"><img class="cover-img" src="{$Think.config.site_url_cdn_uploads}/Uploads/{$confinfo2[imgsrc]}"></div><div class="scene-name">{$confinfo2[title]}</div><div class="confirm-password"><label class="verify-label" for="password">请输入访问密码</label><div class="verify-tips" id="verifyTip"><ul class="password-indicator"><li></li><li></li><li></li><li></li></ul></div><div class="password-numbers"><span>1</span> <span>2</span> <span>3</span> <span>4</span> <span>5</span> <span>6</span> <span>7</span> <span>8</span> <span>9</span> <span>0</span></div><div class="password-operation"><span class="btn-clear" id="btnClear">清空</span> <span class="btn-cancel" id="btnCancel">取消</span></div></div></div></div><php>endif;</php></div><div class="bottom"></div></div></body><script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script><script src="{$Think.config.site_url_cdn_static}/Public/css/waiwan/jquery.min.js"></script><script>(function(window, $) {
         window.PREFIX_URL = "https://" + window.location.host + "/";
         window.PREFIX_S1_URL = "https://" + window.location.host + "/"; //"/json/";
         window.PREFIX_S2_URL = "https://" + window.location.host + "/index.php";
@@ -115,14 +25,7 @@
             "https://" + window.location.host
         ];
 
-    })(window, jQuery)
-</script>
-<!-- <script type="text/javascript" src="{$Think.config.site_url_cdn_static}/view/eqShow-preview-2.1.5.3.js?v=<php>$version = './Application/Common/Conf/ver.php'; $ver = include($version); $ver = $ver['ver'];$ver = substr($ver,-4);echo $ver;</php>"></script> -->
-<script src="{$Think.config.site_url_cdn_static}/dist/eqShowPreview.a9843f0180aadbc7e473.js?a9843f0180aadbc7e473"></script>
-<script src="{$Think.config.site_url_cdn_static}/dist/eqShow.a9843f0180aadbc7e473.js?a9843f0180aadbc7e473"></script>
-
-<script>
-    var scene = {
+    })(window, jQuery)</script><!-- <script type="text/javascript" src="{$Think.config.site_url_cdn_static}/view/eqShow-preview-2.1.5.3.js?v=<php>$version = './Application/Common/Conf/ver.php'; $ver = include($version); $ver = $ver['ver'];$ver = substr($ver,-4);echo $ver;</php>"></script> --><script src="{$Think.config.site_url_cdn_static}/dist/eqShowPreview.63b4b04322d6452ac7a9.js?63b4b04322d6452ac7a9"></script><script src="{$Think.config.site_url_cdn_static}/dist/eqShow.63b4b04322d6452ac7a9.js?63b4b04322d6452ac7a9"></script><script>var scene = {
         id: {$confinfo2[workid]},
         code: "{$sceneinfo['scenecode_varchar']}",
         name: "{$sceneinfo['scenename_varchar']}",
@@ -172,10 +75,7 @@
             setScale();
         }
 
-    })();
-</script>
-<script>
-    wx.config({
+    })();</script><script>wx.config({
         debug: {$confinfo2[sdkdebug]},
         appId: '{$confinfo[appId]}',
         timestamp: "{$confinfo[timestamp]}",
@@ -202,11 +102,4 @@
 
     wx.error(function(res) {
         //alert(res.errMsg);
-    });
-</script>
-{$confinfo2[othercode]}
-<lable style="opacity: 0;height: 0px !important;position: absolute;top: 100px;z-index: -1000;">
-    <php> echo base64_decode(C('countCode'));</php>
-</lable>
-
-</html>
+    });</script>{$confinfo2[othercode]}<lable style="opacity: 0;height: 0px !important;position: absolute;top: 100px;z-index: -1000;"><php>echo base64_decode(C('countCode'));</php></lable></html>
