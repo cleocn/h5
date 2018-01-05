@@ -233,6 +233,7 @@ class SceneController extends Controller{
 		// 读取缓存
 		$cache_json = S($cache_id);
 		if ($cache_json){
+			header('h5: from cache');
 			echo $cache_json;
 			return;
 		}//end 
