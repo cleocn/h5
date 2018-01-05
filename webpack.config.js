@@ -1,5 +1,7 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack');
+const uglify = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -13,6 +15,7 @@ module.exports = {
     publicPath: '{$Think.config.site_url_cdn_static}/dist'
   },
   plugins: [new CleanWebpackPlugin(__dirname + '/dist'),
+    // new uglify(),
     new HtmlWebpackPlugin({
     template:  './Application/Home/View/Index/index.tpl.html',
     filename: '../Application/Home/View/Index/index.html',
