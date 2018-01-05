@@ -6,7 +6,7 @@
 // +----------------------------------------------------------------------
 // | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
 // +----------------------------------------------------------------------
-// | Author: 春哥网络科技 <Q：2931393342>
+// | Author: 小鸟网络科技
 // +----------------------------------------------------------------------
 namespace Org\Util;
 /**
@@ -14,7 +14,7 @@ namespace Org\Util;
  * @category   Think
  * @package  Think
  * @subpackage  Util
- * @author    春哥网络科技 <Q：2931393342>
+ * @author    小鸟网络科技
  */
 class ArrayList implements \IteratorAggregate {
 

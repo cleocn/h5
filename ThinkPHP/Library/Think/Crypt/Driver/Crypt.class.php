@@ -6,7 +6,7 @@
 // +----------------------------------------------------------------------
 // | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
 // +----------------------------------------------------------------------
-// | Author: 春哥网络科技 <Q：2931393342>
+// | Author: 小鸟网络科技
 // +----------------------------------------------------------------------
 namespace Think\Crypt\Driver;
 /**
@@ -14,7 +14,7 @@ namespace Think\Crypt\Driver;
  * @category   ORG
  * @package  ORG
  * @subpackage  Crypt
- * @author    春哥网络科技 <Q：2931393342>
+ * @author    小鸟网络科技
  */
 class Crypt {
 

@@ -26,7 +26,7 @@ module.exports = {
     minify: {
       collapseWhitespace: true,
     },
-    hash: true,
+    hash: false,
     chunks: ['eqShowSite']
   }),
   new HtmlWebpackPlugin({
@@ -36,7 +36,7 @@ module.exports = {
     minify: {
       collapseWhitespace: true,
     },
-    hash: true,
+    hash: false,
     chunks: ['eqShowPreview','eqShow']
   }),
 ]

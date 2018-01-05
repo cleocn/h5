@@ -40,7 +40,7 @@ class IndexController extends BaseController {
         $updatehosturl = $updatehost . '?a=client_check_time&v=' . $ver . '&u=' . $hosturl;
         $domain_time = file_get_contents($updatehosturl);
         if($domain_time == '0'){
-            $domain_time = '[春哥网络科技授权版]';
+            $domain_time = '[小鸟网络科技授权版]';
         }else{
             $domain_time = '授权版本：<b>授权版</b> <br>免费更新服务截止时间： ' . date("Y-m-d", $domain_time) . '';
         }
@@ -66,7 +66,7 @@ class IndexController extends BaseController {
     			'PHP运行方式：' => php_sapi_name(),
 				'PHP版本：' => PHP_VERSION,
     			'MYSQL版本：' =>$mysql,
-    			'程序系统版本' =>  "春哥网络易企秀整合70度_V $ver $release &nbsp;&nbsp;&nbsp; [<a href='//bbs.cgtblog.com' target='_blank'>访问春哥网络科技论坛</a>]",
+    			'程序系统版本' =>  "小鸟网络H5引擎_V $ver $release &nbsp;&nbsp;&nbsp; [<a   target='_blank'></a>]",
     			'上传附件限制：' => ini_get('upload_max_filesize'),
     			'执行时间限制：' => ini_get('max_execution_time') . "秒",
     			'剩余空间：' => round((@disk_free_space(".") / (1024 * 1024)), 2) . 'M',

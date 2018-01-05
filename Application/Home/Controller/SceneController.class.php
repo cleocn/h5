@@ -1400,6 +1400,10 @@ class SceneController extends Controller{
 	
 	public function lable(){
 		echo '{"success":true,"code":200,"msg":"操作成功","obj":{"guid":"20160120110430","comp":"20160120195624"},"map":null,"list":null}';
+	}
+	
+	public function test(){
+		echo '{"success":true,"code":200,"msg":"操作成功","obj":{"guid":"20160120110430","comp":"20160120195624"},"map":null,"list":null}';
     }
 	
 }

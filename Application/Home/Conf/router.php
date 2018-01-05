@@ -17,6 +17,7 @@ return array(
 		'm/base/file/info/save' => 'Upfile/saveinfo', 
 		'm/scene/tag/page/list' => 'Scene/tagPageList', 
 		'm/scene/tag/page/set' => 'Scene/tagPageSet', 
+		'm/scene/usePageTpl' => 'Scene/test', 
 		//'/^[a-zA-Z]+(\/[a-zA-Z]+)?$/' => '/#/:0',
 		
     ),

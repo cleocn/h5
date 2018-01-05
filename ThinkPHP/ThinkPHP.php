@@ -6,7 +6,7 @@
 // +----------------------------------------------------------------------
 // | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
 // +----------------------------------------------------------------------
-// | Author: 春哥网络科技 <Q：2931393342>
+// | Author: 小鸟网络科技
 // +----------------------------------------------------------------------
 
 //----------------------------------
@@ -95,5 +95,16 @@ if(!IS_CLI) {
 
 // 加载核心Think类
 require CORE_PATH.'Think'.EXT;
+
+
+
 // 应用初始化 
 Think\Think::start();
+
+Vendor('Raven.Autoloader'); //加载raven cleo
+Raven_Autoloader::register();
+$client = new Raven_Client('https://c136958c14bf4f3492d29e3025196bf2:caf6e765a0724d5cbf6bd739bf92269b@sentry.hnn7.com/7');
+$error_handler = new Raven_ErrorHandler($client);
+$error_handler->registerExceptionHandler();
+$error_handler->registerErrorHandler();
+$error_handler->registerShutdownFunction();

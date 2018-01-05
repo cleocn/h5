@@ -6,7 +6,7 @@
 // +----------------------------------------------------------------------
 // | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
 // +----------------------------------------------------------------------
-// | Author: 春哥网络科技 <Q：2931393342>
+// | Author: 小鸟网络科技
 // +----------------------------------------------------------------------
 
 namespace Org\Util;
@@ -15,7 +15,7 @@ namespace Org\Util;
  * @category   ORG
  * @package  ORG
  * @subpackage  Date
- * @author    春哥网络科技 <Q：2931393342>
+ * @author    小鸟网络科技
  * @version   $Id: Date.class.php 2662 2012-01-26 06:32:50Z liu21st $
  */
 class Date {
