@@ -1927,16 +1927,16 @@ function(a) {
 			})
 		}
 	}), i.bindAfterRenderEvent("7", function(a, b) {
-		var c = new BMap.Map("map_" + b.id, {
-			enableMapClick: !1
-		}),
-			d = new BMap.Point(b.properties.x, b.properties.y),
-			e = new BMap.Marker(d);
-		c.addOverlay(e);
-		var f = new BMap.Label(b.properties.markTitle, {
-			offset: new BMap.Size(20, -10)
-		});
-		e.setLabel(f), c.disableDoubleClickZoom(), c.centerAndZoom(d, 15)
+		// var c = new BMap.Map("map_" + b.id, {
+		// 	enableMapClick: !1
+		// }),
+		// 	d = new BMap.Point(b.properties.x, b.properties.y),
+		// 	e = new BMap.Marker(d);
+		// c.addOverlay(e);
+		// var f = new BMap.Label(b.properties.markTitle, {
+		// 	offset: new BMap.Size(20, -10)
+		// });
+		// e.setLabel(f), c.disableDoubleClickZoom(), c.centerAndZoom(d, 15)
 	}), i.bindAfterRenderEvent("p", function(a, b) {
 		if (!$(a).closest(".page_tpl_container ").length) {
 			$(a).children(".element-box").css("overflow", "visible"), utilPictures.deleteInterval(b.id);
@@ -3988,7 +3988,7 @@ function(a, b) {
 		cache: !0
 	});
 	var isNewPreviewLocation = /[http|https]:\/\/.*\/m\/scene\/preview\//.test(window.location.href);
-	url = /[http|https]:\/\/.*\/v-/.test(window.location.href) ? window.location.href.split("/v-")[1] : isNewPreviewLocation ? window.location.href.split("/m/scene/preview/")[1] : window.location.href.split("id=")[1], window.viewData && (url = scene.code);
+	url = /[http|https]:\/\/.*\/v\//.test(window.location.href) ? window.location.href.split("/v/")[1] : isNewPreviewLocation ? window.location.href.split("/m/scene/preview/")[1] : window.location.href.split("id=")[1], window.viewData && (url = scene.code);
 	var sceneId = url.split("#")[0].split("&")[0].split("?")[0];
 	isNewPreviewLocation && (sceneId = sceneId.substring(0, sceneId.indexOf(".html")));
 	var param = url.split(sceneId)[1];

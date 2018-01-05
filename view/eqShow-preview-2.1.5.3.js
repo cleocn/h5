@@ -4211,16 +4211,16 @@ function(a) {
 			})
 		}
 	}), t.bindAfterRenderEvent("7", function(a, b) {
-		var c = new BMap.Map("map_" + b.id, {
-			enableMapClick: !1
-		}),
-			d = new BMap.Point(b.properties.x, b.properties.y),
-			e = new BMap.Marker(d);
-		c.addOverlay(e);
-		var f = new BMap.Label(b.properties.markTitle, {
-			offset: new BMap.Size(20, -10)
-		});
-		e.setLabel(f), c.disableDoubleClickZoom(), c.centerAndZoom(d, 15)
+		// var c = new BMap.Map("map_" + b.id, {
+		// 	enableMapClick: !1
+		// }),
+		// 	d = new BMap.Point(b.properties.x, b.properties.y),
+		// 	e = new BMap.Marker(d);
+		// c.addOverlay(e);
+		// var f = new BMap.Label(b.properties.markTitle, {
+		// 	offset: new BMap.Size(20, -10)
+		// });
+		// e.setLabel(f), c.disableDoubleClickZoom(), c.centerAndZoom(d, 15)
 	}), t.bindAfterRenderEvent("p", function(a, b) {
 		if (!$(a).closest(".page_tpl_container ").length) {
 			$(a).children(".element-box").css("overflow", "visible"), utilPictures.deleteInterval(b.id);
@@ -6828,30 +6828,30 @@ function(a, b) {
 		return e / 2 > b ? .5 * $.easing.easeInBounce(a, 2 * b, 0, d, e) + c : .5 * $.easing.easeOutBounce(a, 2 * b - e, 0, d, e) + .5 * d + c
 	}
 }), function(a, b) {
-	function c() {
-		var a = TRACK_HOST + "c.gif?",
-			b = window,
-			c = b.screen,
-			d = c.availWidth + "x" + c.availHeight,
-			e = encodeURIComponent,
-			f = document;
-		n = b.navigator;
-		var g = {
-			lag: n.userLanguage || n.language
-		};
-		typeof scene !== scene && (g.event_description = scene.description, g.event_id = scene.id, g.scene_type = scene.type, g.creator_id = scene.userId, g.creator_type = scene.userType);
-		var h = "action_name=" + e(f.title) + "&idsite=2&url=" + e(f.location) + "&urlref=" + e(f.referrer) + "&res=" + d + "&data=" + e(JSON.stringify(g));
-		h += 1, h += "&ct=" + (new Date).getTime(), a += h;
-		var i = f.createElement("img");
-		i.setAttribute("src", a), i.setAttribute("height", "0"), i.setAttribute("width", "0"), f.body.appendChild(i)
-	}
-	a.getScript(TRACK_HOST + "d.js?pid=2&v=1", function() {
-		function a() {
-			window.scene ? c() : b = setTimeout(a)
-		}
-		if (window.scene) c();
-		else var b = setTimeout(a, 100)
-	}), a.getScript(TRACK_HOST + "r.js?pid=3&v=1")
+	// function c() {
+	// 	var a = TRACK_HOST + "c.gif?",
+	// 		b = window,
+	// 		c = b.screen,
+	// 		d = c.availWidth + "x" + c.availHeight,
+	// 		e = encodeURIComponent,
+	// 		f = document;
+	// 	n = b.navigator;
+	// 	var g = {
+	// 		lag: n.userLanguage || n.language
+	// 	};
+	// 	typeof scene !== scene && (g.event_description = scene.description, g.event_id = scene.id, g.scene_type = scene.type, g.creator_id = scene.userId, g.creator_type = scene.userType);
+	// 	var h = "action_name=" + e(f.title) + "&idsite=2&url=" + e(f.location) + "&urlref=" + e(f.referrer) + "&res=" + d + "&data=" + e(JSON.stringify(g));
+	// 	h += 1, h += "&ct=" + (new Date).getTime(), a += h;
+	// 	var i = f.createElement("img");
+	// 	i.setAttribute("src", a), i.setAttribute("height", "0"), i.setAttribute("width", "0"), f.body.appendChild(i)
+	// }
+	// a.getScript(TRACK_HOST + "d.js?pid=2&v=1", function() {
+	// 	function a() {
+	// 		window.scene ? c() : b = setTimeout(a)
+	// 	}
+	// 	if (window.scene) c();
+	// 	else var b = setTimeout(a, 100)
+	// }), a.getScript(TRACK_HOST + "r.js?pid=3&v=1")
 }(jQuery, window), function(a, b) {
 	a.wapShare = function() {
 		function c(a) {

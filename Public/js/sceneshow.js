@@ -4088,7 +4088,7 @@ var currentPage = null,
     var url, preview, mobileview, pageMode, ad = 0,
         customLastPage = !1,
         scriptLoaded = {};
-    url = /[http|https]:\/\/.*\/v-/.test(window.location.href) ? window.location.href.split("/v-")[1] : window.location.href.split("id=")[1];
+    url = /[http|https]:\/\/.*\/v\//.test(window.location.href) ? window.location.href.split("/v/")[1] : window.location.href.split("id=")[1];
     var sceneId = url.split("#")[0].split("&")[0].split("?")[0],
         param = url.split(sceneId)[1];
     param.indexOf("preview=preview") > 0 && (preview = !0), param.indexOf("mobileview=mobileview") > 0 && (mobileview = !0), isWeixin() && bindWeixin(), mobilecheck() || addElmentsForPc(sceneId);
